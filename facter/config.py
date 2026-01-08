@@ -4,6 +4,8 @@ config.py: Centralized configuration and hyperparameters for FACTER.
 from pathlib import Path
 
 class Config:
+    MODEL_NAME = 'llama3'
+
     DATASETS = {
         'ml-1m': {
             'url': 'https://files.grouplens.org/datasets/movielens/ml-1m.zip',
@@ -11,11 +13,12 @@ class Config:
         },
         'amazon': {
             'url': 'https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz',
-            'sample_size': 2500
+            # 'sample_size': 2500   # TODO delete? (not used)
         }
     }
     EXTRACT_DIR = Path('./data/')
-    RAW_DATA_PATH = EXTRACT_DIR / 'ml-1m'
+    # RAW_DATA_PATH = EXTRACT_DIR / 'ml-1m'  # TODO delete? (not used)
+    STRATIFY = True  # Disable for small sample size (for debugging)
     ALPHA = 0.2
     INITIAL_DELTA = 0.15
     MAX_NEW_TOKENS = 200
