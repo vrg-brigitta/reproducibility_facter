@@ -11,6 +11,8 @@ from facter.utils import setup_logging, generate_recommendations, calculate_fair
 import json
 import pandas as pd
 
+import argparse
+
 def main():
     logger = setup_logging()
     logger.info("Starting FACTER pipeline...")
