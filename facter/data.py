@@ -13,6 +13,8 @@ from tqdm import tqdm
 from .config import Config
 import logging
 
+from io import BytesIO
+
 logger = logging.getLogger(__name__)
 
 class DatasetLoader:
