@@ -135,7 +135,7 @@ class DatasetLoader:
         try:
             self.data = self.data.sort_values(['uid', 'timestamp'])
             self.data['sequence'] = self.data.groupby('uid')['mid'].transform(
-                lambda x: [x.iloc[:i].tolist()[-5:] for i in range(len(x))]
+                lambda x: [x.iloc[:i].tolist()[-Config.MIN_SEQ_LENGTH:] for i in range(len(x))]
             )
             self.data = self.data[self.data['sequence'].apply(
                 lambda x: isinstance(x, list) and len(x) >= 3
@@ -144,7 +144,7 @@ class DatasetLoader:
                 self.data['prompt'] = self.data['sequence'].apply(
                     lambda seq: self._create_movielens_prompt(seq)
                 )
-            else:
+            elif self.dataset_name == 'amazon':
                 self.data['prompt'] = self.data['sequence'].apply(
                     lambda seq: self._create_amazon_prompt(seq)
                 )

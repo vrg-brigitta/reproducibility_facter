@@ -80,7 +80,7 @@ def main():
 
     embedder, tokenizer, model = load_models()
     results = {}
-    for dataset_name in ['amazon', 'ml-1m']:
+    for dataset_name in Config.DATASET_NAMES:
         logger.info(f"\n=== Running Experiment on {dataset_name.upper()} ===")
         loader = DatasetLoader(dataset_name)
         full_data = loader.prepare_prompts().dropna()
