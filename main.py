@@ -13,9 +13,71 @@ import pandas as pd
 
 import argparse
 
+
+def parse_args():
+    """
+    Parses command line arguments.
+    """
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--model_name", type=str, default=None,
+        help=f"LLM (e.g. llama3, llama2, mistral)")
+    parser.add_argument("--datasets", nargs="+", default=None, 
+        help=f"List of datasets (e.g. amazon ml-1m)")
+    parser.add_argument("--extract_dir", default=None)
+    parser.add_argument("--stratify", action=argparse.BooleanOptionalAction, default=None,
+        help=f"Disable stratified sampling for debugging")
+    parser.add_argument("--alpha", type=float, default=None)
+    parser.add_argument("--initial_delta", type=float, default=None)
+    parser.add_argument("--max_new_tokens", type=int, default=None)
+    parser.add_argument("--batch_size", type=int, default=None)
+    parser.add_argument("--max_iterations", type=int, default=None)
+    parser.add_argument("--protected_attributes", nargs="+", default=None)
+    parser.add_argument("--quantile_decay", type=float, default=None)
+    parser.add_argument("--violation_memory_size", type=int, default=None)
+    parser.add_argument("--base_similarity", type=float, default=None)
+    parser.add_argument("--min_seq_length", type=int, default=None)
+    parser.add_argument("--max_prompt_length", type=int, default=None)
+    parser.add_argument("--sample_size_per_dataset", type=int, default=None)
+    parser.add_argument("--n_reference", type=int, default=None)
+    parser.add_argument("--min_group_size", type=int, default=None)
+    parser.add_argument("--n_bootstrap", type=int, default=None)
+
+    return parser.parse_args()
+
+
+def update_config_from_args(args):
+    # For datasets
+    if args.datasets is not None:
+        Config.DATASET_NAMES = args.datasets
+    elif not hasattr(Config, 'DATASET_NAMES'):
+        Config.DATASET_NAMES = list(Config.DATASETS.keys())
+
+    # For all other attributes
+    arg_dict = vars(args)
+    for arg_name, arg_value in arg_dict.items():
+        if arg_name == 'datasets':
+            continue
+        
+        config_attr = arg_name.upper()
+
+        if arg_value is not None:
+            if hasattr(Config, config_attr):
+                setattr(Config, config_attr, arg_value)
+
+
 def main():
-    logger = setup_logging()
+    logger = setup_logging()        
     logger.info("Starting FACTER pipeline...")
+
+    args = parse_args()
+    update_config_from_args(args)
+
+    for attr in dir(Config):
+        if attr.isupper():
+            logger.info(f"  {attr}:\t{getattr(Config, attr)}")
+    print()
+
     embedder, tokenizer, model = load_models()
     results = {}
     for dataset_name in ['amazon', 'ml-1m']:
