@@ -94,7 +94,12 @@ def main():
                                replace=True),
             include_groups=False
         )
-        data = grouped_sample.sample(n=5000, replace=True, random_state=42)
+        # data = grouped_sample.sample(n=5000, replace=True, random_state=42) # TODO delete?
+        # ^^^^^^^^^^^^^^ 
+        data = grouped_sample.sample(n=min(Config.SAMPLE_SIZE_PER_DATASET, len(grouped_sample)),
+            replace=True, random_state=42)  # *** Prevents oversampling and safe for small datasets
+        # vvvvvvvvvvvvvv
+
         strat_col = data[Config.PROTECTED_ATTRIBUTES].apply(
             lambda x: '_'.join(x.astype(str)), axis=1
         )
@@ -102,13 +107,37 @@ def main():
         valid_groups = vc[vc >= 2].index
         filtered_data = data[strat_col.isin(valid_groups)].copy()
         from sklearn.model_selection import train_test_split
+        # train_data, test_data = train_test_split(
+        #     filtered_data,
+        #     test_size=0.3,
+        #     stratify=filtered_data[Config.PROTECTED_ATTRIBUTES].apply(
+        #         lambda x: '_'.join(x.astype(str)), axis=1
+        #     )
+        # )
+        # ^^^^^^^^^^^^^^ 
+        # Build stratification labels
+        strat_labels = filtered_data[Config.PROTECTED_ATTRIBUTES].apply(
+            lambda x: '_'.join(x.astype(str)), axis=1
+        )
+
+        # Decide whether stratification is feasible
+        num_classes = strat_labels.nunique()
+        test_size_abs = int(len(filtered_data) * 0.3)
+
+        if not Config.STRATIFY or test_size_abs < num_classes:
+            logger.warning(
+                f"Disabling stratified split"
+                f"(test_size={test_size_abs}, classes={num_classes})"
+            )
+            strat_labels = None
+
         train_data, test_data = train_test_split(
             filtered_data,
             test_size=0.3,
-            stratify=filtered_data[Config.PROTECTED_ATTRIBUTES].apply(
-                lambda x: '_'.join(x.astype(str)), axis=1
-            )
+            stratify=strat_labels
         )
+        # vvvvvvvvvvvvvv
+
         validator = ConformalFairnessValidator(embedder)
         logger.info("Starting calibration...")
         cal_responses = generate_recommendations(train_data['prompt'].tolist(), "", tokenizer, model)
