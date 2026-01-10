@@ -94,10 +94,10 @@ def main():
                                replace=True),
             include_groups=False
         )
-        # data = grouped_sample.sample(n=5000, replace=True, random_state=42) # TODO delete?
+        data = grouped_sample.sample(n=5000, replace=True, random_state=42) # TODO delete?
         # ^^^^^^^^^^^^^^ 
-        data = grouped_sample.sample(n=min(Config.SAMPLE_SIZE_PER_DATASET, len(grouped_sample)),
-            replace=True, random_state=42)  # *** Prevents oversampling and safe for small datasets
+        # data = grouped_sample.sample(n=min(Config.SAMPLE_SIZE_PER_DATASET, len(grouped_sample)),
+        #     replace=True, random_state=42)  # *** Prevents oversampling and safe for small datasets
         # vvvvvvvvvvvvvv
 
         strat_col = data[Config.PROTECTED_ATTRIBUTES].apply(
