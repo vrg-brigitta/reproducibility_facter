@@ -17,7 +17,7 @@ class Config:
             "paths": ["ratings.dat", "users.dat", "movies.dat"],
         },
         "amazon": {
-            "url": "https://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz",
+            "url": "http://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz",
             "sample_size": 2500,
         },
     }
