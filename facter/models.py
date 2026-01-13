@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 def load_embedder(prefer_public_finetuned: bool = True):
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    name = Config.EMBEDDER_ALT_PUBLIC if prefer_public_finetuned
+    name = Config.EMBEDDER_ALT_PUBLIC if prefer_public_finetuned else "paraphrase-mpnet-base-v2"
     logger.info(f"Loading embedder: {name}")
     return SentenceTransformer(name).to(device)
 
