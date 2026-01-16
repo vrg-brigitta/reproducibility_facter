@@ -64,6 +64,7 @@ class FairPromptEngine:
                     break
             if sample:
                 base.append("Examples of learned mitigation rules from recent violations:")
+                # base.append("Use these examples to avoid relying on demographics:") # this matches the paper exactly
                 base.extend([f"- {r}" for r in sample])
 
         base.append(f"Iteration: {self.iteration+1}/{Config.MAX_NEW_TOKENS if hasattr(Config,'MAX_NEW_TOKENS') else 5}")

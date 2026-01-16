@@ -19,7 +19,12 @@ class Config:
         "amazon": {
             "url": "http://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz",
             "sample_size": 2500,
+
         },
+
+        "amazon_meta": {
+            "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/metaFiles2/meta_Movies_and_TV.json.gz"
+        }
     }
     EXTRACT_DIR: Path = Path("./data/")
     EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
