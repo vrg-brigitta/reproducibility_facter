@@ -14,14 +14,18 @@ logger = logging.getLogger(__name__)
 
 
 def load_embedder(prefer_public_finetuned: bool = True):
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    name = Config.EMBEDDER_ALT_PUBLIC if prefer_public_finetuned else "paraphrase-mpnet-base-v2"
+    device = ("cuda" if torch.cuda.is_available()
+    else "mps" if torch.backends.mps.is_available()
+    else "cpu")
+    name = Config.EMBEDDER_ALT_PUBLIC if prefer_public_finetuned else "sentence-transformers/paraphrase-mpnet-base-v2"
     logger.info(f"Loading embedder: {name}")
     return SentenceTransformer(name).to(device)
 
 
 def load_llm():
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = ("cuda" if torch.cuda.is_available()
+    else "mps" if torch.backends.mps.is_available()
+    else "cpu")
     logger.info(f"Loading LLM: {Config.LLM_BACKBONE}")
     tokenizer = AutoTokenizer.from_pretrained(Config.LLM_BACKBONE, use_fast=True)
     if tokenizer.pad_token is None:

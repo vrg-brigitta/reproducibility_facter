@@ -37,6 +37,31 @@ _MOVIELENS_AGE_MAP = {
     56: "56+",
 }
 
+_MOVIELENS_OCCUPATIONS = {
+    0:  "other",
+    1:  "academic/educator",
+    2:  "artist",
+    3:  "clerical/admin",
+    4:  "college/grad student",
+    5:  "customer service",
+    6:  "doctor/health care",
+    7:  "executive/managerial",
+    8:  "farmer",
+    9:  "homemaker",
+    10: "K-12 student",
+    11: "lawyer",
+    12: "programmer",
+    13: "retired",
+    14: "sales/marketing",
+    15: "scientist",
+    16: "self-employed",
+    17: "technician/engineer",
+    18: "tradesman/craftsman",
+    19: "unemployed",
+    20: "writer",
+}
+
+
 
 @dataclass
 class PromptRow:
@@ -66,6 +91,8 @@ class DatasetLoader:
             self._load_movielens()
         elif self.dataset_name == "amazon":
             self._load_amazon()
+        elif self.dataset_name == "hiring":
+            self._load_hiring()
         else:
             raise ValueError(f"Unknown dataset: {self.dataset_name}")
 
@@ -104,6 +131,11 @@ class DatasetLoader:
             encoding="latin-1",
         )
         users["age"] = users["age"].map(_MOVIELENS_AGE_MAP).fillna(users["age"].astype(str))
+
+        # Added the mapping of occupations from numerical to string
+        users["occupation_id"] = users["occupation"].astype(int)
+        users["occupation_str"] = (users["occupation_id"].map(_MOVIELENS_OCCUPATIONS).fillna("other"))
+
         self.data = ratings.merge(users, on="uid").sort_values(["uid", "timestamp"])
         # item_db: mid -> {title, genre}
         movies["mid"] = movies["mid"].astype(str)
@@ -112,17 +144,67 @@ class DatasetLoader:
     # -------------------------
     # Amazon
     # -------------------------
+    # def _download_amazon(self) -> None:
+    #     gz_path = Config.EXTRACT_DIR / "Movies_and_TV_5.json.gz"
+    #     if gz_path.exists():
+    #         return
+    #     logger.info("Downloading Amazon Movies&TV dataset...")
+    #     resp = requests.get(Config.DATASETS["amazon"]["url"], stream=True, timeout=120)
+    #     resp.raise_for_status()
+    #     with open(gz_path, "wb") as f:
+    #         for chunk in tqdm(resp.iter_content(chunk_size=8192), desc="Downloading", unit="KB"):
+    #             if chunk:
+    #                 f.write(chunk)
+
+    # New downloading function for Amazon to include the metadata
     def _download_amazon(self) -> None:
-        gz_path = Config.EXTRACT_DIR / "Movies_and_TV_5.json.gz"
-        if gz_path.exists():
-            return
-        logger.info("Downloading Amazon Movies&TV dataset...")
-        resp = requests.get(Config.DATASETS["amazon"]["url"], stream=True, timeout=120)
-        resp.raise_for_status()
-        with open(gz_path, "wb") as f:
-            for chunk in tqdm(resp.iter_content(chunk_size=8192), desc="Downloading", unit="KB"):
-                if chunk:
-                    f.write(chunk)
+        """
+        Download Amazon Movies & TV reviews and metadata if not already present.
+        """
+
+        reviews_path = Config.EXTRACT_DIR / "Movies_and_TV_5.json.gz"
+        meta_path = Config.EXTRACT_DIR / "meta_Movies_and_TV.json.gz"
+
+        # Download reviews
+        if not reviews_path.exists():
+            logger.info("Downloading Amazon Movies & TV reviews...")
+            resp = requests.get(
+                Config.DATASETS["amazon"]["url"],
+                stream=True,
+                timeout=120,
+            )
+            resp.raise_for_status()
+            with open(reviews_path, "wb") as f:
+                for chunk in tqdm(
+                    resp.iter_content(chunk_size=8192),
+                    desc="Downloading reviews",
+                    unit="KB",
+                ):
+                    if chunk:
+                        f.write(chunk)
+        else:
+            logger.info("Amazon reviews already downloaded.")
+
+        # Download metadata
+        if not meta_path.exists():
+            logger.info("Downloading Amazon Movies & TV metadata...")
+            resp = requests.get(
+                Config.DATASETS["amazon_meta"]["url"],
+                stream=True,
+                timeout=120,
+            )
+            resp.raise_for_status()
+            with open(meta_path, "wb") as f:
+                for chunk in tqdm(
+                    resp.iter_content(chunk_size=8192),
+                    desc="Downloading metadata",
+                    unit="KB",
+                ):
+                    if chunk:
+                        f.write(chunk)
+        else:
+            logger.info("Amazon metadata already downloaded.")
+
 
     def _load_amazon(self) -> None:
         self._download_amazon()
@@ -149,21 +231,177 @@ class DatasetLoader:
         df["timestamp"] = pd.to_numeric(df["timestamp"], errors="coerce")
         df = df.dropna(subset=["uid", "mid", "timestamp"])
 
+        # Retrieving movie titles from the metadata
+        meta_path = Config.EXTRACT_DIR / "meta_Movies_and_TV.json.gz"
+        asin_to_title = {}
+
+        with gzip.open(meta_path, "rt", encoding="utf-8") as f:
+            for line in tqdm(f, desc="Loading Amazon metadata"):
+                obj = json.loads(line)
+                asin = obj.get("asin")
+                title = obj.get("title")
+                if asin and title:
+                    asin_to_title[str(asin)] = title.strip()
+
+        # Attach real movie titles
+        df["movie_title"] = df["mid"].map(asin_to_title)
+        df["movie_title"] = df["movie_title"].fillna("Unknown Title")
+
         # Amazon doesn't have demographics; to stress-test fairness machinery we synthesize attributes.
         rng = np.random.default_rng(Config.RANDOM_SEED)
         df["gender"] = rng.choice(["M", "F"], size=len(df))
         df["age"] = rng.integers(18, 65, size=len(df)).astype(int)
         df["age"] = pd.cut(df["age"], bins=[17, 24, 34, 44, 54, 64, 200],
                            labels=["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]).astype(str)
-        df["occupation"] = rng.integers(0, 20, size=len(df)).astype(str)
+        df["occupation_id"] = rng.integers(0, 20, size=len(df)).astype(int)
+        df["occupation_str"] = (df["occupation_id"].map(_MOVIELENS_OCCUPATIONS).fillna("other"))
+        df["occupation_id"] = df["occupation_id"].astype(int)
 
         self.data = df.sort_values(["uid", "timestamp"]).copy()
+        # self.item_db = (
+        #     self.data.drop_duplicates("mid")
+        #     .set_index("mid")[["title"]]
+        #     .fillna("Unknown Title")
+        #     .to_dict(orient="index")
+        # )
         self.item_db = (
-            self.data.drop_duplicates("mid")
-            .set_index("mid")[["title"]]
-            .fillna("Unknown Title")
-            .to_dict(orient="index")
-        )
+        self.data.drop_duplicates("mid")
+        .set_index("mid")[["movie_title"]]
+        .rename(columns={"movie_title": "title"})
+        .to_dict(orient="index")
+    )
+
+    # -------------------------
+    # Hiring
+    # -------------------------
+
+    # def _load_hiring(self) -> None:
+    #     """
+    #     Load hiring dataset.
+    #     Produces 3,000 non-trivial job–CV cases for counterfactual auditing.
+    #     """
+
+    #     jobs_df = pd.read_parquet("extension/data/jobs/train-00000-of-00001.parquet")
+    #     candidates_df = pd.read_parquet("extension/data/candidates/train-00000-of-00001.parquet")
+
+    #     # Rename columns
+    #     jobs_df = jobs_df.rename(columns={
+    #         "id": "jid",
+    #         "Position": "job_position",
+    #         "Long Description": "job_description",
+    #     })
+
+    #     candidates_df = candidates_df.rename(columns={
+    #         "id": "cid",
+    #         "Position": "candidate_position",
+    #         "CV": "cv_text",
+    #         "Highlights": "cv_highlights",
+    #     })
+
+    #     jobs_df = jobs_df.dropna(subset=["job_description"]).copy()
+    #     candidates_df = candidates_df.dropna(subset=["cv_text"]).copy()
+
+    #     jobs_df["jid"] = jobs_df["jid"].astype(str)
+    #     candidates_df["cid"] = candidates_df["cid"].astype(str)
+
+    #     # Build embedding texts
+    #     jobs_df["embed_text"] = (
+    #         "Job position: " + jobs_df["job_position"].astype(str) +
+    #         "\nDescription: " + jobs_df["job_description"].astype(str)
+    #     )
+
+    #     candidates_df["embed_text"] = (
+    #         "Candidate position: " + candidates_df["candidate_position"].astype(str) +
+    #         "\nCV: " + candidates_df["cv_text"].astype(str) +
+    #         "\nHighlights: " + candidates_df["cv_highlights"].fillna("").astype(str)
+    #     )
+
+    #     # Sample subsets for efficiency
+    #     rng = np.random.default_rng(Config.RANDOM_SEED)
+
+    #     jobs_pool = jobs_df.sample(
+    #         n=min(6000, len(jobs_df)),
+    #         random_state=Config.RANDOM_SEED,
+    #     ).reset_index(drop=True)
+
+    #     candidates_pool = candidates_df.sample(
+    #         n=min(6000, len(candidates_df)),
+    #         random_state=Config.RANDOM_SEED,
+    #     ).reset_index(drop=True)
+
+    #     # Compute embeddings
+    #     job_embs = self.embedder.encode(
+    #         jobs_pool["embed_text"].tolist(),
+    #         batch_size=32,
+    #         show_progress_bar=True,
+    #         convert_to_numpy=True,
+    #         normalize_embeddings=True,
+    #     )
+
+    #     cand_embs = self.embedder.encode(
+    #         candidates_pool["embed_text"].tolist(),
+    #         batch_size=32,
+    #         show_progress_bar=True,
+    #         convert_to_numpy=True,
+    #         normalize_embeddings=True,
+    #     )
+
+    #     # Random pairing and similarity filtering
+    #     SIM_THRESHOLD = 0.25
+    #     TARGET_N = 3000
+
+    #     cases = []
+    #     attempts = 0
+    #     max_attempts = 100_000
+
+    #     while len(cases) < TARGET_N and attempts < max_attempts:
+    #         i = rng.integers(len(jobs_pool))
+    #         j = rng.integers(len(candidates_pool))
+
+    #         sim = float(np.dot(job_embs[i], cand_embs[j]))
+    #         attempts += 1
+
+    #         if sim >= SIM_THRESHOLD:
+    #             cases.append({
+    #                 "case_id": f"case_{len(cases)}",
+    #                 "jid": jobs_pool.iloc[i]["jid"],
+    #                 "cid": candidates_pool.iloc[j]["cid"],
+    #                 "job_text": jobs_pool.iloc[i]["job_description"],
+    #                 "cv_text": candidates_pool.iloc[j]["cv_text"],
+    #                 "similarity": sim,
+    #             })
+
+    #     if len(cases) < TARGET_N:
+    #         raise RuntimeError(
+    #             f"Only collected {len(cases)} plausible pairs; "
+    #             f"lower SIM_THRESHOLD or increase pool size."
+    #         )
+
+    #     df = pd.DataFrame(cases)
+
+    #     # Protected attribute placeholder
+    #     df["gender"] = "UNKNOWN"
+
+    #     # Context (job-based)
+    #     df["context"] = df["job_text"]
+
+    #     # Prompt construction
+    #     df["prompt"] = df.apply(
+    #         lambda r: self._build_hiring_prompt(
+    #             job_text=r["job_text"],
+    #             cv_text=r["cv_text"],
+    #             gender=r["gender"],
+    #         ),
+    #         axis=1,
+    #     )
+
+    #     # Dummy target (not used)
+    #     df["target_title"] = "N/A"
+
+    #     self.data = df.reset_index(drop=True)
+
+    #     # Minimal item_db for compatibility
+    #     self.item_db = {"N/A": {"title": "N/A"}}
 
     # -------------------------
     # Prompt building
@@ -222,7 +460,7 @@ class DatasetLoader:
             # user attrs assumed stable in group; use the last row’s attrs
             g_last = str(grp["gender"].iloc[-1])
             a_last = str(grp["age"].iloc[-1])
-            o_last = str(grp["occupation"].iloc[-1])
+            o_last = str(grp["occupation_str"].iloc[-1])
 
             for idx in range(Config.HISTORY_SIZE, len(mids)):
                 hist_mids = mids[idx - Config.HISTORY_SIZE : idx]
@@ -248,3 +486,5 @@ class DatasetLoader:
         out = pd.DataFrame([r.__dict__ for r in rows])
         out = out.dropna(subset=["prompt", "context", "target_title"])
         return out
+
+
