@@ -41,6 +41,7 @@ class Config:
     # -------------------------
     # Generation / evaluation
     # -------------------------
+    MAX_ITERATIONS: int = 5
     MAX_PROMPT_LENGTH: int = 2048
     MAX_NEW_TOKENS: int = 250
     BATCH_SIZE: int = 8
