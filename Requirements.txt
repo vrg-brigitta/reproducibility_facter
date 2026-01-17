@@ -11,6 +11,8 @@ tqdm>=4.62
 requests>=2.25
 psutil>=5.8
 python-dotenv>=0.21
+accelerate>=1.12
+codecarbon>=3.2
 
 # Optional/Recommended for research and development
 # rich>=13.0           # Advanced logging (optional)

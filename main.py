@@ -25,6 +25,7 @@ from facter.catalog_map import CatalogMapper
 from facter.metrics_fairness import compute_snsr_snsv, compute_cfr
 from facter.baseline_zero_shot import run_zero_shot_openended, NEUTRAL_SYSTEM_PROMPT
 
+from codecarbon import OfflineEmissionsTracker
 
 def main():
     logger = setup_logging()
@@ -213,4 +214,7 @@ def main():
 
 
 if __name__ == "__main__":
+    tracker = OfflineEmissionsTracker(country_iso_code="NLD")
+    tracker.start()
     main()
+    tracker.stop()
