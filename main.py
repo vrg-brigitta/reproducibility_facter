@@ -44,7 +44,7 @@ def parse_args():
     parser.add_argument("--llm_backbone", type=str, default=None,
         help=f"LLM (e.g. llama3, llama2, mistral)")
     parser.add_argument("--datasets_used", nargs="+", default=None, 
-        help=f"List of datasets (e.g. amazon ml-1m)")
+        help=f"List of datasets (e.g. ml-1m amazon amazon_meta)")
     parser.add_argument("--extract_dir", default=None)
     parser.add_argument("--embedder_alt_public", type=str, default=None)
 
