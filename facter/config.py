@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-@dataclass(frozen=True)
+@dataclass
 class Config:
     # -------------------------
     # Data
@@ -76,3 +76,8 @@ class Config:
 
     # Reproducibility
     RANDOM_SEED: int = 42
+
+    DEBUG: bool = False
+    TRAIN_SIZE: int = None
+    DATASETS_USED = ['ml-1m']
+    MAX_ITERATIONS: int = 5

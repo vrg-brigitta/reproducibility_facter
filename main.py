@@ -27,21 +27,124 @@ from facter.baseline_zero_shot import run_zero_shot_openended, NEUTRAL_SYSTEM_PR
 
 from codecarbon import OfflineEmissionsTracker
 
+import argparse
+from pathlib import Path
+import time
+pd.set_option("display.max_colwidth", None) 
+pd.set_option("display.max_columns", None)   
+pd.set_option("display.width", 200)        
+
+
+def parse_args():
+    """
+    Parses command line arguments.
+    """
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--llm_backbone", type=str, default=None,
+        help=f"LLM (e.g. llama3, llama2, mistral)")
+    parser.add_argument("--datasets_used", nargs="+", default=None, 
+        help=f"List of datasets (e.g. amazon ml-1m)")
+    parser.add_argument("--extract_dir", default=None)
+    parser.add_argument("--embedder_alt_public", type=str, default=None)
+
+    parser.add_argument("--max_prompt_length", type=int, default=None)
+    parser.add_argument("--max_new_tokens", type=int, default=None)
+    parser.add_argument("--batch_size", type=int, default=None)
+    parser.add_argument("--top_k_recs", type=int, default=None)
+    parser.add_argument("--temperature", type=float, default=None)
+    parser.add_argument("--top_p", type=float, default=None)
+    parser.add_argument("--repetition_penalty", type=float, default=None)
+
+    parser.add_argument("--history_size", type=int, default=None)
+    parser.add_argument("--min_seq_length", type=int, default=None)
+
+    parser.add_argument("--protected_attributes", nargs="+", default=None)
+
+    parser.add_argument("--alpha", type=float, default=None)
+    parser.add_argument("--lambda_fairness", type=float, default=None)
+    parser.add_argument("--n_reference", type=int, default=None)
+    parser.add_argument("--base_similarity", type=float, default=None)
+
+    parser.add_argument("--quantile_decay", type=float, default=None)
+    parser.add_argument("--violation_memory_size", type=int, default=None)
+
+    parser.add_argument("--min_group_size", type=int, default=None)
+    parser.add_argument("--n_bootstrap", type=int, default=None)
+
+    parser.add_argument("--random_seed", type=int, default=None)
+    parser.add_argument("--debug", action=argparse.BooleanOptionalAction, default=None)
+    parser.add_argument("--train_size", type=int, default=None)
+    parser.add_argument("--max_iterations", type=int, default=None)
+
+    return parser.parse_args()
+
+
+def update_config_from_args(args):
+    """
+    Overrides Config values that are explicitly provided as arguments.
+    """
+    # Dataset selection (experiment-level)
+    if args.datasets_used is not None:
+        unknown = set(args.datasets_used) - set(Config.DATASETS.keys())
+        if unknown:
+            raise ValueError(
+                f"Unknown datasets {unknown}. "
+                f"Available: {list(Config.DATASETS.keys())}"
+            )
+        Config.DATASETS_USED = args.datasets_used
+
+    # Path override
+    if args.extract_dir is not None:
+        Config.EXTRACT_DIR = Path(args.extract_dir)
+        Config.EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # For all other attributes
+    for arg_name, arg_value in vars(args).items():
+        if arg_name in {"datasets_used", "extract_dir"}:
+            continue
+        if arg_value is None:
+            continue
+
+        config_attr = arg_name.upper()
+        if hasattr(Config, config_attr):
+            setattr(Config, config_attr, arg_value)
+
+
 def main():
+    args = parse_args()
+    update_config_from_args(args)
+
     logger = setup_logging()
+  
     np.random.seed(Config.RANDOM_SEED)
 
+    for attr in dir(Config):
+        if attr.isupper():
+            logger.info(f"  {attr}:\t{getattr(Config, attr)}")
+
     embedder, tokenizer, model = load_models(prefer_public_finetuned_embedder=True)
+    logger.info(f"embedder:\t{embedder}")
+    logger.info(f"tokenizer:\t{tokenizer}")
+    logger.info(f"model:\t{model}")
 
     results = {}
-    for dataset_name in ["amazon", "ml-1m"]:
+    for dataset_name in Config.DATASETS_USED:
         logger.info(f"\n=== Running {dataset_name.upper()} ===")
+        preprocessing_start = time.time()
+
         loader = DatasetLoader(dataset_name)
         df = loader.prepare_prompts().dropna().reset_index(drop=True)
+        logger.info(f"df.shape:\t{df.shape}")
 
         # Stratify by full tuple for stable eval
         strata = df[Config.PROTECTED_ATTRIBUTES].astype(str).agg("_".join, axis=1)
+        logger.info(f"strata.shape:\t{strata.shape}")
+        logger.info(f"strata.nunique():\t{strata.nunique()}")
+        logger.info(f"strata[:5]:\n{strata[:5]}")
+
         df = df[strata.map(strata.value_counts()) >= 2].copy()
+        logger.info(f"df.shape:\t{df.shape}")
 
         train_df, test_df = train_test_split(
             df,
@@ -49,6 +152,21 @@ def main():
             random_state=Config.RANDOM_SEED,
             stratify=df[Config.PROTECTED_ATTRIBUTES].astype(str).agg("_".join, axis=1),
         )
+        n_total = len(df)
+        n_train = len(train_df)
+        n_test = len(test_df)
+        logger.info(f"Train: {n_train} samples ({100 * n_train / n_total:.1f}%)")
+        logger.info(f"Test : {n_test} samples ({100 * n_test / n_total:.1f}%)")
+
+        if Config.TRAIN_SIZE:
+            train_df = train_df.iloc[: Config.TRAIN_SIZE].copy()  # DEBUG: use small subset
+            test_df = test_df.iloc[: Config.TRAIN_SIZE // 2].copy()
+
+            logger.info(f"Train MINI: {train_df.shape}")
+            logger.info(f"Test MINI: {test_df.shape}")
+        
+        logger.info(f"train_df[:5]:\n{train_df[:5]}")
+        logger.info(f"test_df[:5]:\n{test_df[:5]}")
 
         # Build catalog mapper
         mapper = CatalogMapper(embedder, loader.item_db)
@@ -58,12 +176,17 @@ def main():
         # Offline calibration (FASTER: use rank-1 from open-ended)
         # -------------------------
         logger.info("Calibration generation (open-ended Top-K)...")
+        calib_start = time.time()
         cal_recs = generate_recommendations(train_df["prompt"].tolist(), system_msg="", tokenizer=tokenizer, model=model)
+        logger.info(f"len(cal_recs):\t{len(cal_recs)}")
+        logger.info(f"cal_recs[:5]:\n{cal_recs[:5]}")
 
         cal_groups = [
             _group_key({k: str(row[k]) for k in Config.PROTECTED_ATTRIBUTES})
             for _, row in train_df.iterrows()
         ]
+        logger.info(f"len(cal_groups):\t{len(cal_groups)}")
+        logger.info(f"cal_groups[:5]:\n{cal_groups[:5]}")
 
         validator = ConformalFairnessValidator(embedder, item_db=loader.item_db)
         validator.calibrate(
@@ -83,13 +206,21 @@ def main():
         # -------------------------
         # Zero-shot baseline (task-matched open-ended)
         # -------------------------
+        logger.info("Zero-shot baseline...")
+        zero_shot_start = time.time()
+        
         zs_raw = run_zero_shot_openended(test_df, tokenizer, model)
+        logger.info(f"len(zs_raw):\t{len(zs_raw)}")
+        logger.info(f"zs_raw[:5]:\n{zs_raw[:5]}")
+
         zs_map = []
         zs_valid = []
         for recs in zs_raw:
             mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=0.65)
             zs_map.append(mr.mapped_titles)
             zs_valid.append(mr.valid_at_k)
+        logger.info(f"zs_map[:5]:\n{zs_map[:5]}")
+        logger.info(f"zs_valid[:5]:\t{zs_valid[:5]}")
 
         zs_acc = evaluate_at_k_from_lists(zs_map, test_df["target_title"].tolist(), k=Config.TOP_K_RECS)
         zs_validm = evaluate_valid_at_k(zs_valid, k=Config.TOP_K_RECS)
@@ -121,7 +252,12 @@ def main():
         # FACTER iterations
         # -------------------------
         history = []
-        for it in range(Config.MAX_ITERATIONS):
+        total_inference_time = 0.0
+
+        for it in range(1, Config.MAX_ITERATIONS+1):
+            logger.info(f"Iteration {it} ...")
+            iter_start = time.time()
+
             prompt_engine.set_iteration(it)
 
             facter_raw = []
@@ -131,7 +267,7 @@ def main():
             scores = []
             thresholds = []
 
-            for _, row in test_df.iterrows():
+            for i, (_, row) in enumerate(test_df.iterrows()):
                 attrs = {k: str(row[k]) for k in Config.PROTECTED_ATTRIBUTES}
                 g = _group_key(attrs)
 
@@ -142,6 +278,13 @@ def main():
                 # map
                 mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=0.65)
                 mapped = mr.mapped_titles
+
+                if i < 5:
+                    logger.info(f"system_msg\n{system_msg}")
+                    logger.info(f"user_prompt\n{user_prompt}") 
+                    logger.info(f"recs\n{recs}") 
+                    logger.info(f"mr\n{mr}") 
+                    logger.info(f"mapped\n{mapped}")
 
                 v, s, q = validator.validate(
                     context=row["context"],
@@ -173,7 +316,7 @@ def main():
             # CFR (neutral) can be computed once per dataset; optional to compute per-iteration.
             # Here we compute once in iteration 0 for speed; set to None otherwise.
             cfr = None
-            if it == 0:
+            if it == 1:
                 cfr = compute_cfr(
                     eval_df,
                     embedder,
@@ -186,7 +329,7 @@ def main():
                 )
 
             record = {
-                "iteration": it + 1,
+                "iteration": it,
                 "violation_rate": viol_rate,
                 **acc,
                 **validm,
@@ -197,7 +340,8 @@ def main():
             if cfr is not None:
                 record.update({"CFR": cfr.CFR, "CFR_valid_rate": cfr.valid_rate, "CFR_n_pairs": cfr.n_pairs})
 
-            logger.info(f"Iter {it+1}: {json.dumps(record, indent=2)}")
+            logger.info(f"Iter {it}: {json.dumps(record, indent=2)}")
+            total_inference_time += (time.time() - iter_start)
             history.append(record)
 
             if it >= 2 and viol_rate < 0.10:
@@ -207,6 +351,10 @@ def main():
             "baseline": baseline_block,
             "history": history,
             "Q_alpha_init": float(validator.adaptive_threshold) if validator.adaptive_threshold is not None else None,
+            "preprocessing_time": (calib_start - preprocessing_start)/60,
+            "calib_time": (zero_shot_start - calib_start)/60,
+            "total_inference_time": total_inference_time/60,
+
         }
 
     logger.info("\n=== FINAL RESULTS ===\n" + json.dumps(results, indent=2))
