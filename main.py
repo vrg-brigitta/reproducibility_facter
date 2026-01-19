@@ -219,7 +219,7 @@ def main():
         zs_map = []
         zs_valid = []
         for recs in zs_raw:
-            mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=0.65)
+            mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.BASE_SIMILARITY)
             zs_map.append(mr.mapped_titles)
             zs_valid.append(mr.valid_at_k)
         logger.info(f"zs_map[:5]:\n{zs_map[:5]}")
@@ -279,7 +279,7 @@ def main():
 
                 recs = generate_recommendations([user_prompt], system_msg, tokenizer, model)[0]
                 # map
-                mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=0.65)
+                mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.BASE_SIMILARITY)
                 mapped = mr.mapped_titles
 
                 if i < 5:
@@ -303,15 +303,16 @@ def main():
                 is_viol.append(v)
                 scores.append(s)
                 thresholds.append(q)
-
-            logger.info(f"validator.violation_memory\n{validator.violation_memory}")
-            
+           
             eval_df = test_df.copy()
             eval_df["mapped_recs"] = facter_mapped
             eval_df["valid_at_k"] = facter_valid
             eval_df["is_violation"] = is_viol
             eval_df["S"] = scores
             eval_df["Q"] = thresholds
+
+            logger.info(f"validator.violation_memory\n{validator.violation_memory}")
+            logger.info(f"eval_df[:5]\n{eval_df[:5]}")
 
             viol_rate = float(np.mean(is_viol)) if is_viol else 0.0
             acc = evaluate_at_k_from_lists(facter_mapped, eval_df["target_title"].tolist(), k=Config.TOP_K_RECS)
@@ -336,6 +337,7 @@ def main():
             record = {
                 "iteration": it,
                 "violation_rate": viol_rate,
+                "violation_count": int(np.sum(is_viol)),
                 **acc,
                 **validm,
                 "SNSR": sns.SNSR,
@@ -370,7 +372,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # tracker = OfflineEmissionsTracker(country_iso_code="NLD")
-    # tracker.start()
     main()
-    # tracker.stop()
