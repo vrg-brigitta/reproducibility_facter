@@ -64,14 +64,14 @@ class Config:
     PROTECTED_ATTRIBUTES = ["gender", "age", "occupation"]
 
     ALPHA: float = 0.2  # miscoverage level
-    LAMBDA_FAIRNESS: float = 0.5  # λ in S = d + λΔ
+    LAMBDA_FAIRNESS: float = 0.7 # 0.5  # λ in S = d + λΔ
 
     # Neighborhood for Δ (cross-group)
     N_REFERENCE: int = 20
-    BASE_SIMILARITY: float = 0.65  # τ_ρ : minimum context similarity to be a neighbor
+    BASE_SIMILARITY: float = 0.9 # 0.65  # τ_ρ : minimum context similarity to be a neighbor
 
     # Online update (Eq. 11 in the paper)
-    QUANTILE_DECAY: float = 0.92  # γ
+    QUANTILE_DECAY: float = 0.95 # 0.92  # γ
     VIOLATION_MEMORY_SIZE: int = 50
 
     # Fairness metric bootstrapping (optional)
