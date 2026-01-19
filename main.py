@@ -115,6 +115,9 @@ def main():
     args = parse_args()
     update_config_from_args(args)
 
+    tracker = OfflineEmissionsTracker(country_iso_code="NLD")
+    tracker.start()
+
     logger = setup_logging()
   
     np.random.seed(Config.RANDOM_SEED)
@@ -301,6 +304,8 @@ def main():
                 scores.append(s)
                 thresholds.append(q)
 
+            logger.info(f"validator.violation_memory\n{validator.violation_memory}")
+            
             eval_df = test_df.copy()
             eval_df["mapped_recs"] = facter_mapped
             eval_df["valid_at_k"] = facter_valid
@@ -358,11 +363,14 @@ def main():
         }
 
     logger.info("\n=== FINAL RESULTS ===\n" + json.dumps(results, indent=2))
+
+    tracker.stop()
+
     return results
 
 
 if __name__ == "__main__":
-    tracker = OfflineEmissionsTracker(country_iso_code="NLD")
-    tracker.start()
+    # tracker = OfflineEmissionsTracker(country_iso_code="NLD")
+    # tracker.start()
     main()
-    tracker.stop()
+    # tracker.stop()
