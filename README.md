@@ -6,7 +6,7 @@ This repository is a replication of FACTER:
 
 Compared to the original implementation, this version:
 - Refactors the code into a more modular and flexible pipeline
-- Adds support for hiring dataset
+- Adds support for Djinni Recruitment Dataset
 
 **Original paper**: https://icml.cc/virtual/2025/poster/44576
 
@@ -25,7 +25,7 @@ pip install -r Requirements.txt
 This is recommended to run a mini test using the default configuration to verify that the setup works before running full experiments:
 
 ```bash
-python main.py --train_size 3
+python main.py --train_size 3 --max_iterations 3
 ```
 
 ## Basic Usage
@@ -42,15 +42,15 @@ The following values are supported for `--datasets_used`:
 
 - `ml-1m` – MovieLens 1M dataset (default)
 
-- `amazon` – Amazon Movies & TV reviews dataset
+- `amazon` – Amazon Movies & TV reviews dataset + Amazon Movies & TV metadata dataset
 
-- `amazon_meta` – Amazon Movies & TV metadata dataset
+- `hiring` – Djinni Recruitment Dataset
 
 You can pass one or multiple datasets:
 
 `--datasets_used ml-1m`
 
-`--datasets_used ml-1m amazon amazon_meta`
+`--datasets_used ml-1m amazon`
 
 You can also override many default settings directly from the command line, including:
 

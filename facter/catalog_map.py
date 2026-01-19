@@ -48,7 +48,8 @@ def rewrite_prompt_attrs(prompt: str, new_attrs: Dict[str, str]) -> str:
     for k, v in new_attrs.items():
         pattern = rf"(\-\s*{re.escape(k)}\s*:\s*)(.*)"
         if re.search(pattern, out, flags=re.IGNORECASE):
-            out = re.sub(pattern, rf"\1{v}", out, flags=re.IGNORECASE)
+            # out = re.sub(pattern, rf"\1{v}", out, flags=re.IGNORECASE) 
+            out = re.sub(pattern, rf"\g<1>{v}", out, flags=re.IGNORECASE)
             replaced_any = True
 
     if replaced_any:
