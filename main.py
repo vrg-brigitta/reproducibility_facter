@@ -46,6 +46,7 @@ def parse_args():
     parser.add_argument("--datasets_used", nargs="+", default=None, 
         help=f"List of datasets (e.g. ml-1m amazon amazon_meta)")
     parser.add_argument("--extract_dir", default=None)
+    parser.add_argument("--preprocessed_path", default=None)
     parser.add_argument("--embedder_alt_public", type=str, default=None)
 
     parser.add_argument("--max_prompt_length", type=int, default=None)
@@ -65,6 +66,7 @@ def parse_args():
     parser.add_argument("--lambda_fairness", type=float, default=None)
     parser.add_argument("--n_reference", type=int, default=None)
     parser.add_argument("--base_similarity", type=float, default=None)
+    parser.add_argument("--mapping_similarity", type=float, default=None)
 
     parser.add_argument("--quantile_decay", type=float, default=None)
     parser.add_argument("--violation_memory_size", type=int, default=None)
@@ -98,6 +100,10 @@ def update_config_from_args(args):
     if args.extract_dir is not None:
         Config.EXTRACT_DIR = Path(args.extract_dir)
         Config.EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+
+    if args.preprocessed_path is not None:
+        Config.PREPROCESSED_PATH = Path(args.preprocessed_path)
+        Config.PREPROCESSED_PATH.mkdir(parents=True, exist_ok=True)
 
     # For all other attributes
     for arg_name, arg_value in vars(args).items():
@@ -137,7 +143,12 @@ def main():
         preprocessing_start = time.time()
 
         loader = DatasetLoader(dataset_name)
-        df = loader.prepare_prompts().dropna().reset_index(drop=True)
+
+        sample_size = Config.DATASETS[dataset_name]['sample_size']
+        df = loader.prepare_prompts().dropna().sample(n=sample_size, 
+                                                      random_state=Config.RANDOM_SEED).reset_index(drop=True)
+        df.to_csv(Config.PREPROCESSED_PATH / f"{dataset_name}_{sample_size}.csv", index=False)
+
         logger.info(f"df.shape:\t{df.shape}")
 
         # Stratify by full tuple for stable eval
@@ -160,6 +171,12 @@ def main():
         n_test = len(test_df)
         logger.info(f"Train: {n_train} samples ({100 * n_train / n_total:.1f}%)")
         logger.info(f"Test : {n_test} samples ({100 * n_test / n_total:.1f}%)")
+        strata_train = train_df[Config.PROTECTED_ATTRIBUTES].astype(str).agg("_".join, axis=1)
+        strata_test = test_df[Config.PROTECTED_ATTRIBUTES].astype(str).agg("_".join, axis=1)
+        logger.info(f"strata_train.nunique():\t{strata_train.nunique()}")
+        logger.info(f"strata_test.nunique():\t{strata_test.nunique()}")
+        train_df.to_csv(Config.PREPROCESSED_PATH / f"{dataset_name}_{sample_size}_train.csv", index=False)
+        test_df.to_csv(Config.PREPROCESSED_PATH / f"{dataset_name}_{sample_size}_test.csv", index=False)
 
         if Config.TRAIN_SIZE:
             train_df = train_df.iloc[: Config.TRAIN_SIZE].copy()  # DEBUG: use small subset
@@ -219,7 +236,7 @@ def main():
         zs_map = []
         zs_valid = []
         for recs in zs_raw:
-            mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.BASE_SIMILARITY)
+            mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.MAPPING_SIMILARITY)
             zs_map.append(mr.mapped_titles)
             zs_valid.append(mr.valid_at_k)
         logger.info(f"zs_map[:5]:\n{zs_map[:5]}")
@@ -228,6 +245,7 @@ def main():
         zs_acc = evaluate_at_k_from_lists(zs_map, test_df["target_title"].tolist(), k=Config.TOP_K_RECS)
         zs_validm = evaluate_valid_at_k(zs_valid, k=Config.TOP_K_RECS)
         zs_sns = compute_snsr_snsv(test_df.assign(mapped_recs=zs_map), embedder, recs_col="mapped_recs", group_mode="tuple")
+        logger.info("zs_cfr = compute_cfr...")
         zs_cfr = compute_cfr(
             test_df,
             embedder,
@@ -239,6 +257,29 @@ def main():
             prompt_col="prompt",
         )
 
+        # --- Zero-shot violations (no threshold updates) ---
+        logger.info("Zero-shot violations (no threshold updates)...")
+        zs_is_viol = []
+        zs_scores = []
+
+        for (_, row), mapped in zip(test_df.iterrows(), zs_map):
+            attrs = {k: str(row[k]) for k in Config.PROTECTED_ATTRIBUTES}
+
+            # compute S the same way validate() does, but without updating Q / memory
+            yhat_title = mapped[0] if mapped else ""
+            s = validator._score_S(
+                context=row["context"],
+                group=_group_key(attrs),
+                y_hat_title=yhat_title,
+                y_true_title=row["target_title"],
+            )
+
+            zs_scores.append(float(s))
+            zs_is_viol.append(bool(s > validator.adaptive_threshold))
+
+        zs_violation_count = int(np.sum(zs_is_viol))
+        zs_violation_rate = float(np.mean(zs_is_viol)) if zs_is_viol else 0.0
+
         baseline_block = {
             "ZeroShot_OpenEnded": {
                 **zs_acc,
@@ -248,8 +289,11 @@ def main():
                 "CFR": zs_cfr.CFR,
                 "CFR_valid_rate": zs_cfr.valid_rate,
                 "CFR_n_pairs": zs_cfr.n_pairs,
+                "violation_count": zs_violation_count,
+                "violation_rate": zs_violation_rate,
             }
         }
+        logger.info(f"baseline_block:\n{baseline_block}")
 
         # -------------------------
         # FACTER iterations
@@ -279,7 +323,7 @@ def main():
 
                 recs = generate_recommendations([user_prompt], system_msg, tokenizer, model)[0]
                 # map
-                mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.BASE_SIMILARITY)
+                mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.MAPPING_SIMILARITY)
                 mapped = mr.mapped_titles
 
                 if i < 5:
