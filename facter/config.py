@@ -15,19 +15,24 @@ class Config:
         "ml-1m": {
             "url": "https://files.grouplens.org/datasets/movielens/ml-1m.zip",
             "paths": ["ratings.dat", "users.dat", "movies.dat"],
+            "sample_size": 2500,
         },
         "amazon": {
             "url": "http://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz",
-            "sample_size": 2500,
+            "sample_size": 3750,
 
         },
 
         "amazon_meta": {
-            "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/metaFiles2/meta_Movies_and_TV.json.gz"
+            "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/metaFiles2/meta_Movies_and_TV.json.gz",
+            "sample_size": 3750,
         }
     }
     EXTRACT_DIR: Path = Path("./data/")
     EXTRACT_DIR.mkdir(parents=True, exist_ok=True)
+
+    PREPROCESSED_PATH = Path("./data_preprocessed/")
+    PREPROCESSED_PATH.mkdir(parents=True, exist_ok=True)
 
     # -------------------------
     # Models
@@ -69,6 +74,7 @@ class Config:
     # Neighborhood for Δ (cross-group)
     N_REFERENCE: int = 20
     BASE_SIMILARITY: float = 0.9 # 0.65  # τ_ρ : minimum context similarity to be a neighbor
+    MAPPING_SIMILARITY: float = 0.65  # minimum title similarity to be mapped as the same 
 
     # Online update (Eq. 11 in the paper)
     QUANTILE_DECAY: float = 0.95 # 0.92  # γ
