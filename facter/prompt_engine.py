@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 class FairPromptEngine:
     def __init__(self, validator):
         self.validator = validator
-        self.iteration = 0
+        self.iteration = 1
 
     def set_iteration(self, iteration: int) -> None:
         self.iteration = iteration
@@ -67,7 +67,7 @@ class FairPromptEngine:
                 # base.append("Use these examples to avoid relying on demographics:") # this matches the paper exactly
                 base.extend([f"- {r}" for r in sample])
 
-        base.append(f"Iteration: {self.iteration+1}/{Config.MAX_NEW_TOKENS if hasattr(Config,'MAX_NEW_TOKENS') else 5}")
+        base.append(f"Iteration: {self.iteration}/{Config.MAX_NEW_TOKENS if hasattr(Config,'MAX_NEW_TOKENS') else 5}")
         return "\n".join(base)
 
     def update_prompt(self, prompt: str, current_group: Optional[str] = None) -> str:
