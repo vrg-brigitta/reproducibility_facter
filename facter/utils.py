@@ -112,11 +112,13 @@ def generate_recommendations(
         with torch.no_grad():
             outputs = model.generate(
                 input_ids=input_ids,
+                attention_mask = (input_ids != tokenizer.pad_token_id).long(),
                 max_new_tokens=Config.MAX_NEW_TOKENS,
                 temperature=Config.TEMPERATURE,
                 top_p=Config.TOP_P,
                 repetition_penalty=Config.REPETITION_PENALTY,
                 do_sample=True,
+                pad_token_id=tokenizer.pad_token_id,
             )
 
         decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
