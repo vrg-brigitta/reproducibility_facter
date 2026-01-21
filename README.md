@@ -1,5 +1,5 @@
-# fact_group_8
-This repository is a replication of FACTER:
+# Reproducibility study of FACTER
+This repository is part of a reproducibility study of FACTER:
 
 **FACTER: Fairness-Aware Conformal Thresholding and Prompt Engineering for Enabling Fair LLM-Based Recommender Systems**
 *by Arya Fayyazi · Mehdi Kamal · Massoud Pedram*
@@ -76,9 +76,15 @@ python main.py --help
 
 ## Reproducibility steps
 
-`python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used ml-1m amazon`
-`python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used ml-1m amazon`
-`python main.py --llm_backbone meta-llama/Meta-Llama-3-8B-Instruct --datasets_used ml-1m amazon`
+On MovieLens dataset:
+- `python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used ml-1m`
+- `python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used ml-1m`
+- `python main.py --llm_backbone meta-llama/Meta-Llama-3-8B-Instruct --datasets_used ml-1m`
+
+On Amazon dataset:
+- `python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used amazon`
+- `python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used amazon`
+- `python main.py --llm_backbone meta-llama/Meta-Llama-3-8B-Instruct --datasets_used amazon`
 
 ## Carbon Emissions Tracking
 
