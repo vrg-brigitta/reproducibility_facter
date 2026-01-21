@@ -41,6 +41,7 @@ class Config:
 
     LLM_BACKBONE: str = "mistralai/Mistral-7B-Instruct-v0.1"     # Mistral
     # LLM_BACKBONE: str = "mistralai/Mistral-7B-Instruct-v0.3"
+    # LLM_BACKBONE: str = "meta-llama/Llama-2-7b-chat-hf"  # Llama2
     # LLM_BACKBONE: str = "meta-llama/Meta-Llama-3-8B-Instruct"  # Llama3
 
 

@@ -74,6 +74,12 @@ Run with `--help` to see all available options:
 python main.py --help
 ```
 
+## Reproducibility steps
+
+`python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used ml-1m amazon`
+`python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used ml-1m amazon`
+`python main.py --llm_backbone meta-llama/Meta-Llama-3-8B-Instruct --datasets_used ml-1m amazon`
+
 ## Carbon Emissions Tracking
 
 To visualize energy usage and carbon emissions, install **CodeCarbon**:

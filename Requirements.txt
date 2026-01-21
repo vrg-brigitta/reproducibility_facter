@@ -16,6 +16,7 @@ codecarbon>=3.2
 jinja2>=3.1.0
 sentencepiece
 protobuf
+tiktoken
 
 # Optional/Recommended for research and development
 # rich>=13.0           # Advanced logging (optional)
