@@ -67,7 +67,8 @@ class FairPromptEngine:
                 # base.append("Use these examples to avoid relying on demographics:") # this matches the paper exactly
                 base.extend([f"- {r}" for r in sample])
 
-        base.append(f"Iteration: {self.iteration}/{Config.MAX_NEW_TOKENS if hasattr(Config,'MAX_NEW_TOKENS') else 5}")
+        # base.append(f"Iteration: {self.iteration}/{Config.MAX_NEW_TOKENS if hasattr(Config,'MAX_NEW_TOKENS') else 5}")
+        base.append(f"Iteration: {self.iteration}/{Config.MAX_ITERATIONS}")
         return "\n".join(base)
 
     def update_prompt(self, prompt: str, current_group: Optional[str] = None) -> str:
