@@ -75,7 +75,7 @@ def parse_args():
     parser.add_argument("--n_bootstrap", type=int, default=None)
 
     parser.add_argument("--random_seed", type=int, default=None)
-    parser.add_argument("--debug", action=argparse.BooleanOptionalAction, default=None)
+    parser.add_argument("--improved", action=argparse.BooleanOptionalAction, default=None)
     parser.add_argument("--train_size", type=int, default=None)
     parser.add_argument("--max_iterations", type=int, default=None)
 
