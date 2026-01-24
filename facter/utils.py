@@ -44,6 +44,7 @@ def parse_ranked_list(text: str, k: int) -> List[str]:
     """
     Parse a model output into a list of titles.
     Prefers JSON array; otherwise parse numbered/bulleted lines.
+    Works for Llama-3 dataset.
     """
     if not text:
         return []
@@ -85,6 +86,61 @@ def parse_ranked_list(text: str, k: int) -> List[str]:
             seen.add(x)
     return uniq[:k]
 
+def parse_ranked_list_improved(text: str, k: int) -> List[str]:
+    """
+    Parse a model output into a list of titles.
+    Prefers JSON array; otherwise parse numbered/bulleted lines.
+    Works for Llama-3, Llama-2, and Mistral datasets.
+    """
+    if not text:
+        return []
+
+    # strip markdown fences (Mistral)
+    text = re.sub(r"```(?:json)?|```", "", text, flags=re.IGNORECASE)
+
+    # strict JSON array of strings
+    m = re.search(
+        r"\[\s*(?:\"[^\"]*\"\s*,\s*)*\"[^\"]*\"\s*\]",
+        text,
+        flags=re.DOTALL,
+    )
+    if m:
+        try:
+            arr = json.loads(m.group(0))
+            if isinstance(arr, list):
+                seen, out = set(), []
+                for x in arr:
+                    x = str(x).strip()
+                    if x and x not in seen:
+                        out.append(x)
+                        seen.add(x)
+                    if len(out) >= k:
+                        break
+                return out
+        except Exception:
+            pass
+
+    # fallback: numbered / bullet lines
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    out = []
+    for ln in lines:
+        ln = re.sub(r"^\s*[\-\*\d\.\)\:]+\s*", "", ln).strip()
+        # skip meta lines
+        if ln.lower().startswith(("sure", "here are", "recommend", "based on")):
+            continue
+        if ln:
+            out.append(ln)
+        if len(out) >= k:
+            break
+
+    # unique preserve order
+    seen, uniq = set(), []
+    for x in out:
+        if x not in seen:
+            uniq.append(x)
+            seen.add(x)
+    return uniq[:k]
+
 
 def generate_recommendations(
     prompts: List[str],
@@ -113,7 +169,8 @@ def generate_recommendations(
             outputs = model.generate(
                 input_ids=input_ids,
                 attention_mask = (input_ids != tokenizer.pad_token_id).long(),
-                max_new_tokens=Config.MAX_NEW_TOKENS,
+                # max_new_tokens=Config.MAX_NEW_TOKENS,
+                max_new_tokens=Config.MAX_NEW_TOKENS * 3 if Config.IMPROVED else Config.MAX_NEW_TOKENS,  # improved version (prevents truncation for LLaMA-2 and Mistral)
                 temperature=Config.TEMPERATURE,
                 top_p=Config.TOP_P,
                 repetition_penalty=Config.REPETITION_PENALTY,
@@ -123,7 +180,10 @@ def generate_recommendations(
 
         decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
         for txt in decoded:
-            recs = parse_ranked_list(txt, Config.TOP_K_RECS)
+            if Config.IMPROVED:
+                recs = parse_ranked_list(txt, Config.TOP_K_RECS)  # original version (do not work fro Llama2 and Mistral)
+            else:
+                recs = parse_ranked_list_improved(txt, Config.TOP_K_RECS)
             all_recs.append(recs)
 
     # if any prompts were None, keep alignment by returning empty lists for them

@@ -44,7 +44,7 @@ def parse_args():
     parser.add_argument("--llm_backbone", type=str, default=None,
         help=f"LLM (e.g. llama3, llama2, mistral)")
     parser.add_argument("--datasets_used", nargs="+", default=None, 
-        help=f"List of datasets (e.g. ml-1m amazon amazon_meta)")
+        help=f"List of datasets (e.g. ml-1m amazon)")
     parser.add_argument("--extract_dir", default=None)
     parser.add_argument("--preprocessed_path", default=None)
     parser.add_argument("--embedder_alt_public", type=str, default=None)
@@ -75,7 +75,7 @@ def parse_args():
     parser.add_argument("--n_bootstrap", type=int, default=None)
 
     parser.add_argument("--random_seed", type=int, default=None)
-    parser.add_argument("--debug", action=argparse.BooleanOptionalAction, default=None)
+    parser.add_argument("--improved", action=argparse.BooleanOptionalAction, default=None)
     parser.add_argument("--train_size", type=int, default=None)
     parser.add_argument("--max_iterations", type=int, default=None)
 
@@ -349,11 +349,13 @@ def main():
                 thresholds.append(q)
            
             eval_df = test_df.copy()
+            eval_df["mapped_recs_raw"] = facter_raw
             eval_df["mapped_recs"] = facter_mapped
             eval_df["valid_at_k"] = facter_valid
             eval_df["is_violation"] = is_viol
             eval_df["S"] = scores
             eval_df["Q"] = thresholds
+            eval_df.to_csv(Config.PREPROCESSED_PATH / f"{dataset_name}_eval_df_iter{it}.csv", index=False)
 
             logger.info(f"validator.violation_memory\n{validator.violation_memory}")
             logger.info(f"eval_df[:5]\n{eval_df[:5]}")
