@@ -181,9 +181,9 @@ def generate_recommendations(
         decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
         for txt in decoded:
             if Config.IMPROVED:
-                recs = parse_ranked_list(txt, Config.TOP_K_RECS)  # original version (do not work fro Llama2 and Mistral)
-            else:
                 recs = parse_ranked_list_improved(txt, Config.TOP_K_RECS)
+            else:
+                recs = parse_ranked_list(txt, Config.TOP_K_RECS)  # original version (do not work fro Llama2 and Mistral)
             all_recs.append(recs)
 
     # if any prompts were None, keep alignment by returning empty lists for them
