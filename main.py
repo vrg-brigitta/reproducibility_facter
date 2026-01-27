@@ -197,7 +197,21 @@ def main():
         # -------------------------
         logger.info("Calibration generation (open-ended Top-K)...")
         calib_start = time.time()
-        cal_recs = generate_recommendations(train_df["prompt"].tolist(), system_msg="", tokenizer=tokenizer, model=model)
+        if Config.IMPROVED:
+            cal_recs_raw = generate_recommendations(train_df["prompt"].tolist(), 
+                                                    system_msg="", 
+                                                    tokenizer=tokenizer, 
+                                                    model=model)
+            cal_recs = []
+            for recs in cal_recs_raw:
+                cal_mr = mapper.map_list(recs, k=Config.TOP_K_RECS, min_sim=Config.MAPPING_SIMILARITY)
+                cal_recs.append(cal_mr.mapped_titles)
+        else:
+            cal_recs = generate_recommendations(train_df["prompt"].tolist(), 
+                                                system_msg="", 
+                                                tokenizer=tokenizer, 
+                                                model=model)  # original version (calibreat on raw output (not mapped))
+        
         logger.info(f"len(cal_recs):\t{len(cal_recs)}")
         logger.info(f"cal_recs[:5]:\n{cal_recs[:5]}")
 
