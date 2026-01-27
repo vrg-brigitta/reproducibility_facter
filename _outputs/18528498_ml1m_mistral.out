@@ -1,0 +1,827 @@
+Package                  Version
+------------------------ -----------
+accelerate               1.10.1
+aiohappyeyeballs         2.6.1
+aiohttp                  3.13.3
+aiosignal                1.4.0
+annotated-types          0.7.0
+anyio                    4.12.1
+appdirs                  1.4.4
+argcomplete              1.12.0
+arrow                    1.4.0
+async-timeout            4.0.2
+attrs                    20.3.0
+Babel                    2.9.1
+boto3                    1.28.62
+botocore                 1.31.62
+bottle                   0.12.21
+certifi                  2023.5.7
+cffi                     1.14.5
+chardet                  4.0.0
+charset-normalizer       3.4.4
+click                    8.0.3
+ClusterShell             1.9.3
+codecarbon               3.2.1
+cryptography             36.0.1
+datasets                 4.4.2
+dbus-python              1.2.18
+decorator                4.4.2
+defusedxml               0.7.1
+Deprecated               1.2.15
+dill                     0.4.0
+distlib                  0.3.2
+distro                   1.5.0
+dmftar                   2.4.4
+dnspython                2.6.1
+doca-sosreport           4.9.0
+exceptiongroup           1.3.1
+fief-client              0.20.0
+file-magic               0.4.0
+filelock                 3.7.1
+flake8                   4.0.1
+frozenlist               1.8.0
+fsspec                   2025.10.0
+future                   0.18.3
+Glances                  3.3.1
+gpg                      1.15.1
+grpcio                   1.46.7
+h11                      0.16.0
+hf-xet                   1.2.0
+html2text                2020.1.16
+httpcore                 1.0.9
+httpx                    0.27.2
+huggingface-hub          0.36.0
+idna                     2.10
+importlib_metadata       8.7.1
+iniparse                 0.4
+iotop                    0.6
+isort                    5.10.1
+Jinja2                   3.1.6
+jmespath                 0.9.4
+joblib                   1.5.3
+jsonschema               3.2.0
+jwcrypto                 1.5.6
+libcomps                 0.1.18
+lxml                     4.6.5
+markdown-it-py           3.0.0
+MarkupSafe               3.0.3
+mccabe                   0.6.1
+mdurl                    0.1.2
+meson                    0.63.3
+mpmath                   1.3.0
+multidict                6.7.0
+multiprocess             0.70.18
+networkx                 3.2.1
+nftables                 0.1
+numpy                    2.0.2
+nvidia-cublas-cu12       12.8.4.1
+nvidia-cuda-cupti-cu12   12.8.90
+nvidia-cuda-nvrtc-cu12   12.8.93
+nvidia-cuda-runtime-cu12 12.8.90
+nvidia-cudnn-cu12        9.10.2.21
+nvidia-cufft-cu12        11.3.3.83
+nvidia-cufile-cu12       1.13.1.3
+nvidia-curand-cu12       10.3.9.90
+nvidia-cusolver-cu12     11.7.3.90
+nvidia-cusparse-cu12     12.5.8.93
+nvidia-cusparselt-cu12   0.7.1
+nvidia-ml-py             13.590.44
+nvidia-nccl-cu12         2.27.3
+nvidia-nvjitlink-cu12    12.8.93
+nvidia-nvtx-cu12         12.8.90
+packaging                20.9
+pandas                   2.3.3
+pcocc                    0.7.4
+perf                     0.1
+pexpect                  4.8.0
+pillow                   11.3.0
+pip                      25.3
+platformdirs             2.5.4
+ply                      3.11
+podman-compose           1.5.0
+prometheus_client        0.24.1
+prompt_toolkit           3.0.52
+propcache                0.4.1
+protobuf                 3.14.0
+psutil                   7.2.1
+ptyprocess               0.6.0
+py-cpuinfo               9.0.0
+pyarrow                  21.0.0
+pycairo                  1.20.1
+pycodestyle              2.8.0
+pycparser                2.20
+pycurl                   7.43.0.6
+pydantic                 2.12.5
+pydantic_core            2.41.5
+pyflakes                 2.4.0
+Pygments                 2.19.2
+PyGObject                3.40.1
+pyinotify                0.9.6
+pymacaroons              0.13.0
+PyNaCl                   1.4.0
+pyOpenSSL                21.0.0
+pyparsing                2.4.7
+pyrsistent               0.17.3
+pyslurm                  25.5.0
+PySocks                  1.7.1
+python-dateutil          2.9.0.post0
+python-dotenv            1.2.1
+python-hostlist          2.3.0
+python-linux-procfs      0.7.3
+python3-etcd             0.5.0
+pytz                     2021.1
+pyudev                   0.22.0
+PyYAML                   5.4.1
+questionary              2.1.1
+RapidFuzz                3.13.0
+redis                    4.3.3
+regex                    2025.11.3
+requests                 2.32.5
+rich                     14.2.0
+rpm                      4.16.1.3
+s3transfer               0.7.0
+safetensors              0.7.0
+scikit-learn             1.6.1
+scipy                    1.13.1
+selinux                  3.6
+sentence-transformers    5.1.2
+sepolicy                 3.6
+setools                  4.4.4
+setuptools               53.0.0
+shellingham              1.5.4
+simplejson               3.17.6
+six                      1.15.0
+sniffio                  1.3.1
+SSSDConfig               2.9.6
+subscription-manager     1.29.45.1
+sympy                    1.14.0
+systemd-python           234
+termcolor                3.1.0
+threadpoolctl            3.6.0
+tokenizers               0.22.2
+torch                    2.8.0
+tqdm                     4.67.1
+transformers             4.57.3
+triton                   3.4.0
+typer                    0.21.1
+typer-slim               0.21.1
+typing_extensions        4.15.0
+typing-inspection        0.4.2
+tzdata                   2025.3
+ujson                    5.8.0
+urlgrabber               4.1.0
+urllib3                  1.26.5
+virtualenv               20.21.1
+wcwidth                  0.2.14
+websockify               0.11.0
+wheel                    0.36.2
+wrapt                    1.17.1
+xxhash                   3.6.0
+yarl                     1.22.0
+yaspin                   3.3.0
+zipp                     3.23.0
+2026-01-21 10:20:33,088 - INFO -   ALPHA:	0.2
+2026-01-21 10:20:33,088 - INFO -   BASE_SIMILARITY:	0.9
+2026-01-21 10:20:33,088 - INFO -   BATCH_SIZE:	8
+2026-01-21 10:20:33,088 - INFO -   DATASETS:	{'ml-1m': {'url': 'https://files.grouplens.org/datasets/movielens/ml-1m.zip', 'paths': ['ratings.dat', 'users.dat', 'movies.dat'], 'sample_size': 2500}, 'amazon': {'url': 'http://jmcauley.ucsd.edu/data/amazon_v2/categoryFilesSmall/Movies_and_TV_5.json.gz', 'sample_size': 3750}, 'amazon_meta': {'url': 'https://mcauleylab.ucsd.edu/public_datasets/data/amazon_v2/metaFiles2/meta_Movies_and_TV.json.gz', 'sample_size': 3750}}
+2026-01-21 10:20:33,088 - INFO -   DATASETS_USED:	['ml-1m']
+2026-01-21 10:20:33,088 - INFO -   DEBUG:	False
+2026-01-21 10:20:33,088 - INFO -   EMBEDDER_ALT_PUBLIC:	JJTsao/fine-tuned_movie_retriever-all-mpnet-base-v2
+2026-01-21 10:20:33,089 - INFO -   EXTRACT_DIR:	data
+2026-01-21 10:20:33,089 - INFO -   HISTORY_SIZE:	10
+2026-01-21 10:20:33,089 - INFO -   LAMBDA_FAIRNESS:	0.7
+2026-01-21 10:20:33,089 - INFO -   LLM_BACKBONE:	mistralai/Mistral-7B-Instruct-v0.1
+2026-01-21 10:20:33,089 - INFO -   MAPPING_SIMILARITY:	0.65
+2026-01-21 10:20:33,089 - INFO -   MAX_ITERATIONS:	5
+2026-01-21 10:20:33,089 - INFO -   MAX_NEW_TOKENS:	250
+2026-01-21 10:20:33,089 - INFO -   MAX_PROMPT_LENGTH:	2048
+2026-01-21 10:20:33,089 - INFO -   MIN_GROUP_SIZE:	30
+2026-01-21 10:20:33,089 - INFO -   MIN_SEQ_LENGTH:	5
+2026-01-21 10:20:33,089 - INFO -   N_BOOTSTRAP:	200
+2026-01-21 10:20:33,089 - INFO -   N_REFERENCE:	20
+2026-01-21 10:20:33,089 - INFO -   PREPROCESSED_PATH:	data_preprocessed
+2026-01-21 10:20:33,089 - INFO -   PROTECTED_ATTRIBUTES:	['gender', 'age', 'occupation']
+2026-01-21 10:20:33,089 - INFO -   QUANTILE_DECAY:	0.95
+2026-01-21 10:20:33,089 - INFO -   RANDOM_SEED:	42
+2026-01-21 10:20:33,089 - INFO -   REPETITION_PENALTY:	1.2
+2026-01-21 10:20:33,089 - INFO -   TEMPERATURE:	0.7
+2026-01-21 10:20:33,089 - INFO -   TOP_K_RECS:	10
+2026-01-21 10:20:33,089 - INFO -   TOP_P:	0.95
+2026-01-21 10:20:33,089 - INFO -   TRAIN_SIZE:	None
+2026-01-21 10:20:33,089 - INFO -   VIOLATION_MEMORY_SIZE:	50
+2026-01-21 10:20:33,158 - INFO - Loading embedder: JJTsao/fine-tuned_movie_retriever-all-mpnet-base-v2
+2026-01-21 10:20:33,161 - INFO - Use pytorch device_name: cuda:0
+2026-01-21 10:20:33,161 - INFO - Load pretrained SentenceTransformer: JJTsao/fine-tuned_movie_retriever-all-mpnet-base-v2
+Invalid model-index. Not loading eval results into CardData.
+2026-01-21 10:20:35,373 - WARNING - Invalid model-index. Not loading eval results into CardData.
+2026-01-21 10:20:36,252 - INFO - Loading LLM: mistralai/Mistral-7B-Instruct-v0.1
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-01-21 10:20:36,868 - INFO - We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:11<00:11, 11.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.05s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:17<00:00,  8.62s/it]
+2026-01-21 10:20:54,372 - INFO - embedder:	SentenceTransformer(
+  (0): Transformer({'max_seq_length': 384, 'do_lower_case': False, 'architecture': 'MPNetModel'})
+  (1): Pooling({'word_embedding_dimension': 768, 'pooling_mode_cls_token': False, 'pooling_mode_mean_tokens': True, 'pooling_mode_max_tokens': False, 'pooling_mode_mean_sqrt_len_tokens': False, 'pooling_mode_weightedmean_tokens': False, 'pooling_mode_lasttoken': False, 'include_prompt': True})
+  (2): Normalize()
+)
+2026-01-21 10:20:54,372 - INFO - tokenizer:	LlamaTokenizerFast(name_or_path='mistralai/Mistral-7B-Instruct-v0.1', vocab_size=32000, model_max_length=1000000000000000019884624838656, is_fast=True, padding_side='left', truncation_side='right', special_tokens={'bos_token': '<s>', 'eos_token': '</s>', 'unk_token': '<unk>', 'pad_token': '</s>'}, clean_up_tokenization_spaces=False, added_tokens_decoder={
+	0: AddedToken("<unk>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	1: AddedToken("<s>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	2: AddedToken("</s>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+}
+)
+2026-01-21 10:20:54,374 - INFO - model:	MistralForCausalLM(
+  (model): MistralModel(
+    (embed_tokens): Embedding(32000, 4096)
+    (layers): ModuleList(
+      (0-31): 32 x MistralDecoderLayer(
+        (self_attn): MistralAttention(
+          (q_proj): Linear(in_features=4096, out_features=4096, bias=False)
+          (k_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (v_proj): Linear(in_features=4096, out_features=1024, bias=False)
+          (o_proj): Linear(in_features=4096, out_features=4096, bias=False)
+        )
+        (mlp): MistralMLP(
+          (gate_proj): Linear(in_features=4096, out_features=14336, bias=False)
+          (up_proj): Linear(in_features=4096, out_features=14336, bias=False)
+          (down_proj): Linear(in_features=14336, out_features=4096, bias=False)
+          (act_fn): SiLUActivation()
+        )
+        (input_layernorm): MistralRMSNorm((4096,), eps=1e-05)
+        (post_attention_layernorm): MistralRMSNorm((4096,), eps=1e-05)
+      )
+    )
+    (norm): MistralRMSNorm((4096,), eps=1e-05)
+    (rotary_emb): MistralRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=4096, out_features=32000, bias=False)
+)
+2026-01-21 10:20:54,374 - INFO - 
+=== Running ML-1M ===
+Building sequences (ml-1m):   0%|          | 0/6040 [00:00<?, ?it/s]Building sequences (ml-1m):   0%|          | 22/6040 [00:00<00:28, 214.68it/s]Building sequences (ml-1m):   1%|▏         | 82/6040 [00:00<00:13, 434.62it/s]Building sequences (ml-1m):   2%|▏         | 148/6040 [00:00<00:11, 528.77it/s]Building sequences (ml-1m):   3%|▎         | 201/6040 [00:00<00:11, 512.14it/s]Building sequences (ml-1m):   4%|▍         | 261/6040 [00:00<00:10, 538.04it/s]Building sequences (ml-1m):   5%|▌         | 319/6040 [00:00<00:10, 540.69it/s]Building sequences (ml-1m):   6%|▌         | 377/6040 [00:00<00:10, 552.24it/s]Building sequences (ml-1m):   7%|▋         | 438/6040 [00:00<00:09, 562.02it/s]Building sequences (ml-1m):   8%|▊         | 505/6040 [00:00<00:09, 592.77it/s]Building sequences (ml-1m):   9%|▉         | 565/6040 [00:01<00:15, 353.72it/s]Building sequences (ml-1m):  10%|█         | 634/6040 [00:01<00:12, 422.04it/s]Building sequences (ml-1m):  11%|█▏        | 688/6040 [00:01<00:12, 443.00it/s]Building sequences (ml-1m):  12%|█▏        | 741/6040 [00:01<00:11, 443.06it/s]Building sequences (ml-1m):  13%|█▎        | 792/6040 [00:01<00:11, 458.69it/s]Building sequences (ml-1m):  14%|█▍        | 850/6040 [00:01<00:10, 487.24it/s]Building sequences (ml-1m):  15%|█▍        | 903/6040 [00:01<00:10, 491.76it/s]Building sequences (ml-1m):  16%|█▌        | 959/6040 [00:01<00:09, 509.01it/s]Building sequences (ml-1m):  17%|█▋        | 1015/6040 [00:02<00:09, 507.63it/s]Building sequences (ml-1m):  18%|█▊        | 1068/6040 [00:02<00:09, 504.94it/s]Building sequences (ml-1m):  19%|█▊        | 1120/6040 [00:02<00:10, 485.77it/s]Building sequences (ml-1m):  19%|█▉        | 1170/6040 [00:02<00:10, 469.99it/s]Building sequences (ml-1m):  20%|██        | 1218/6040 [00:02<00:10, 462.62it/s]Building sequences (ml-1m):  21%|██        | 1266/6040 [00:02<00:10, 465.13it/s]Building sequences (ml-1m):  22%|██▏       | 1313/6040 [00:02<00:10, 461.62it/s]Building sequences (ml-1m):  23%|██▎       | 1360/6040 [00:03<00:14, 321.89it/s]Building sequences (ml-1m):  24%|██▎       | 1420/6040 [00:03<00:12, 381.59it/s]Building sequences (ml-1m):  24%|██▍       | 1465/6040 [00:03<00:11, 391.12it/s]Building sequences (ml-1m):  25%|██▌       | 1521/6040 [00:03<00:10, 433.49it/s]Building sequences (ml-1m):  26%|██▋       | 1589/6040 [00:03<00:08, 497.17it/s]Building sequences (ml-1m):  27%|██▋       | 1643/6040 [00:03<00:09, 466.50it/s]Building sequences (ml-1m):  28%|██▊       | 1693/6040 [00:03<00:09, 454.94it/s]Building sequences (ml-1m):  29%|██▉       | 1741/6040 [00:03<00:09, 443.66it/s]Building sequences (ml-1m):  30%|██▉       | 1790/6040 [00:03<00:09, 455.25it/s]Building sequences (ml-1m):  31%|███       | 1843/6040 [00:03<00:08, 475.63it/s]Building sequences (ml-1m):  31%|███▏      | 1894/6040 [00:04<00:08, 484.78it/s]Building sequences (ml-1m):  32%|███▏      | 1944/6040 [00:04<00:08, 459.16it/s]Building sequences (ml-1m):  33%|███▎      | 1992/6040 [00:04<00:08, 463.50it/s]Building sequences (ml-1m):  34%|███▍      | 2039/6040 [00:04<00:08, 460.18it/s]Building sequences (ml-1m):  35%|███▍      | 2088/6040 [00:04<00:08, 467.95it/s]Building sequences (ml-1m):  35%|███▌      | 2136/6040 [00:04<00:08, 455.06it/s]Building sequences (ml-1m):  36%|███▌      | 2187/6040 [00:04<00:08, 470.28it/s]Building sequences (ml-1m):  37%|███▋      | 2242/6040 [00:04<00:07, 492.11it/s]Building sequences (ml-1m):  38%|███▊      | 2304/6040 [00:05<00:10, 352.75it/s]Building sequences (ml-1m):  39%|███▉      | 2383/6040 [00:05<00:08, 447.09it/s]Building sequences (ml-1m):  41%|████      | 2454/6040 [00:05<00:07, 507.02it/s]Building sequences (ml-1m):  42%|████▏     | 2512/6040 [00:05<00:06, 525.25it/s]Building sequences (ml-1m):  43%|████▎     | 2581/6040 [00:05<00:06, 568.24it/s]Building sequences (ml-1m):  44%|████▍     | 2644/6040 [00:05<00:05, 584.69it/s]Building sequences (ml-1m):  45%|████▍     | 2717/6040 [00:05<00:05, 624.82it/s]Building sequences (ml-1m):  46%|████▌     | 2782/6040 [00:05<00:05, 600.70it/s]Building sequences (ml-1m):  47%|████▋     | 2844/6040 [00:05<00:05, 592.57it/s]Building sequences (ml-1m):  48%|████▊     | 2905/6040 [00:06<00:05, 552.85it/s]Building sequences (ml-1m):  49%|████▉     | 2962/6040 [00:06<00:05, 536.23it/s]Building sequences (ml-1m):  50%|████▉     | 3018/6040 [00:06<00:05, 534.91it/s]Building sequences (ml-1m):  51%|█████     | 3073/6040 [00:06<00:05, 527.84it/s]Building sequences (ml-1m):  52%|█████▏    | 3130/6040 [00:06<00:05, 538.25it/s]Building sequences (ml-1m):  53%|█████▎    | 3193/6040 [00:06<00:05, 561.08it/s]Building sequences (ml-1m):  54%|█████▍    | 3250/6040 [00:06<00:04, 562.07it/s]Building sequences (ml-1m):  55%|█████▍    | 3307/6040 [00:06<00:05, 545.54it/s]Building sequences (ml-1m):  56%|█████▌    | 3362/6040 [00:06<00:05, 531.89it/s]Building sequences (ml-1m):  57%|█████▋    | 3416/6040 [00:07<00:05, 500.31it/s]Building sequences (ml-1m):  57%|█████▋    | 3471/6040 [00:07<00:05, 511.42it/s]Building sequences (ml-1m):  58%|█████▊    | 3523/6040 [00:07<00:05, 473.88it/s]Building sequences (ml-1m):  59%|█████▉    | 3572/6040 [00:07<00:05, 477.78it/s]Building sequences (ml-1m):  60%|█████▉    | 3621/6040 [00:07<00:05, 461.39it/s]Building sequences (ml-1m):  61%|██████    | 3668/6040 [00:07<00:07, 311.97it/s]Building sequences (ml-1m):  61%|██████▏   | 3707/6040 [00:07<00:07, 328.15it/s]Building sequences (ml-1m):  62%|██████▏   | 3757/6040 [00:07<00:06, 367.03it/s]Building sequences (ml-1m):  63%|██████▎   | 3808/6040 [00:08<00:05, 392.54it/s]Building sequences (ml-1m):  64%|██████▍   | 3851/6040 [00:08<00:05, 384.97it/s]Building sequences (ml-1m):  65%|██████▍   | 3911/6040 [00:08<00:04, 440.68it/s]Building sequences (ml-1m):  66%|██████▌   | 3963/6040 [00:08<00:04, 461.91it/s]Building sequences (ml-1m):  66%|██████▋   | 4012/6040 [00:08<00:04, 467.29it/s]Building sequences (ml-1m):  67%|██████▋   | 4061/6040 [00:08<00:04, 445.34it/s]Building sequences (ml-1m):  68%|██████▊   | 4107/6040 [00:08<00:04, 447.16it/s]Building sequences (ml-1m):  69%|██████▉   | 4165/6040 [00:08<00:03, 484.37it/s]Building sequences (ml-1m):  70%|██████▉   | 4219/6040 [00:08<00:03, 499.03it/s]Building sequences (ml-1m):  71%|███████   | 4274/6040 [00:09<00:03, 512.49it/s]Building sequences (ml-1m):  72%|███████▏  | 4326/6040 [00:09<00:03, 495.36it/s]Building sequences (ml-1m):  72%|███████▏  | 4376/6040 [00:09<00:03, 492.27it/s]Building sequences (ml-1m):  73%|███████▎  | 4426/6040 [00:09<00:03, 480.09it/s]Building sequences (ml-1m):  74%|███████▍  | 4476/6040 [00:09<00:03, 483.37it/s]Building sequences (ml-1m):  75%|███████▍  | 4525/6040 [00:09<00:03, 445.55it/s]Building sequences (ml-1m):  76%|███████▌  | 4591/6040 [00:09<00:02, 499.13it/s]Building sequences (ml-1m):  77%|███████▋  | 4653/6040 [00:09<00:02, 529.81it/s]Building sequences (ml-1m):  78%|███████▊  | 4711/6040 [00:09<00:02, 542.17it/s]Building sequences (ml-1m):  79%|███████▉  | 4771/6040 [00:09<00:02, 552.94it/s]Building sequences (ml-1m):  80%|███████▉  | 4827/6040 [00:10<00:02, 531.68it/s]Building sequences (ml-1m):  81%|████████  | 4890/6040 [00:10<00:02, 557.55it/s]Building sequences (ml-1m):  82%|████████▏ | 4950/6040 [00:10<00:01, 563.71it/s]Building sequences (ml-1m):  83%|████████▎ | 5007/6040 [00:10<00:01, 551.74it/s]Building sequences (ml-1m):  84%|████████▍ | 5063/6040 [00:10<00:01, 536.02it/s]Building sequences (ml-1m):  85%|████████▍ | 5117/6040 [00:10<00:01, 507.18it/s]Building sequences (ml-1m):  86%|████████▌ | 5169/6040 [00:10<00:02, 341.12it/s]Building sequences (ml-1m):  87%|████████▋ | 5239/6040 [00:11<00:01, 415.15it/s]Building sequences (ml-1m):  88%|████████▊ | 5294/6040 [00:11<00:01, 444.33it/s]Building sequences (ml-1m):  89%|████████▊ | 5347/6040 [00:11<00:01, 462.44it/s]Building sequences (ml-1m):  89%|████████▉ | 5399/6040 [00:11<00:01, 475.90it/s]Building sequences (ml-1m):  90%|█████████ | 5458/6040 [00:11<00:01, 503.12it/s]Building sequences (ml-1m):  91%|█████████▏| 5512/6040 [00:11<00:01, 512.06it/s]Building sequences (ml-1m):  92%|█████████▏| 5566/6040 [00:11<00:00, 505.35it/s]Building sequences (ml-1m):  93%|█████████▎| 5618/6040 [00:11<00:00, 508.33it/s]Building sequences (ml-1m):  94%|█████████▍| 5670/6040 [00:11<00:00, 496.89it/s]Building sequences (ml-1m):  95%|█████████▍| 5724/6040 [00:11<00:00, 508.71it/s]Building sequences (ml-1m):  96%|█████████▌| 5776/6040 [00:12<00:00, 504.43it/s]Building sequences (ml-1m):  96%|█████████▋| 5827/6040 [00:12<00:00, 499.97it/s]Building sequences (ml-1m):  97%|█████████▋| 5880/6040 [00:12<00:00, 497.88it/s]Building sequences (ml-1m):  98%|█████████▊| 5947/6040 [00:12<00:00, 545.59it/s]Building sequences (ml-1m):  99%|█████████▉| 6002/6040 [00:12<00:00, 521.21it/s]Building sequences (ml-1m): 100%|██████████| 6040/6040 [00:12<00:00, 480.58it/s]
+2026-01-21 10:21:14,327 - INFO - df.shape:	(2500, 7)
+2026-01-21 10:21:14,339 - INFO - strata.shape:	(2500,)
+2026-01-21 10:21:14,340 - INFO - strata.nunique():	198
+2026-01-21 10:21:14,341 - INFO - strata[:5]:
+0       M_50-55_academic/educator
+1    F_25-34_college/grad student
+2       M_25-34_academic/educator
+3       M_25-34_academic/educator
+4                    M_56+_writer
+dtype: object
+2026-01-21 10:21:14,343 - INFO - df.shape:	(2470, 7)
+2026-01-21 10:21:14,361 - INFO - Train: 1729 samples (70.0%)
+2026-01-21 10:21:14,362 - INFO - Test : 741 samples (30.0%)
+2026-01-21 10:21:14,375 - INFO - strata_train.nunique():	168
+2026-01-21 10:21:14,375 - INFO - strata_test.nunique():	168
+2026-01-21 10:21:14,431 - INFO - train_df[:5]:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  prompt  \
+873                                                       User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: unemployed\n\nWatch history:\n1. Breaking Away (1979)\n2. Apocalypse Now (1979)\n3. Blood Simple (1984)\n4. Pulp Fiction (1994)\n5. Ran (1985)\n6. This Is Spinal Tap (1984)\n7. Nights of Cabiria (Le Notti di Cabiria) (1957)\n8. Taxi Driver (1976)\n9. Platoon (1986)\n10. Usual Suspects, The (1995)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1381                                                                   User profile (audit only):\n- gender: F\n- age: 25-34\n- occupation: other\n\nWatch history:\n1. Yellow Submarine (1968)\n2. Sound of Music, The (1965)\n3. Against All Odds (1984)\n4. Blade Runner (1982)\n5. Platoon (1986)\n6. Gandhi (1982)\n7. Aliens (1986)\n8. Right Stuff, The (1983)\n9. Witness (1985)\n10. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1231  User profile (audit only):\n- gender: F\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Star Trek VI: The Undiscovered Country (1991)\n2. In the Heat of the Night (1967)\n3. Shawshank Redemption, The (1994)\n4. Casablanca (1942)\n5. To Kill a Mockingbird (1962)\n6. Usual Suspects, The (1995)\n7. Great Escape, The (1963)\n8. Seven Days in May (1964)\n9. Citizen Kane (1941)\n10. Tampopo (1986)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1234                               User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: self-employed\n\nWatch history:\n1. Fly II, The (1989)\n2. My Favorite Martian (1999)\n3. Superman III (1983)\n4. Demolition Man (1993)\n5. Sphere (1998)\n6. Plan 9 from Outer Space (1958)\n7. Back to the Future Part III (1990)\n8. Junior (1994)\n9. Escape from L.A. (1996)\n10. Escape from the Planet of the Apes (1971)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+766                                                              User profile (audit only):\n- gender: F\n- age: 25-34\n- occupation: artist\n\nWatch history:\n1. Corrina, Corrina (1994)\n2. Grease (1978)\n3. Pretty in Pink (1986)\n4. Return to Me (2000)\n5. Dirty Dancing (1987)\n6. True Romance (1993)\n7. Blast from the Past (1999)\n8. Sommersby (1993)\n9. Bram Stoker's Dracula (1992)\n10. American President, The (1995)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+
+                                                                                                                                                                                                                                                                                                                                    context  \
+873                                             Watch history:\n1. Breaking Away (1979)\n2. Apocalypse Now (1979)\n3. Blood Simple (1984)\n4. Pulp Fiction (1994)\n5. Ran (1985)\n6. This Is Spinal Tap (1984)\n7. Nights of Cabiria (Le Notti di Cabiria) (1957)\n8. Taxi Driver (1976)\n9. Platoon (1986)\n10. Usual Suspects, The (1995)   
+1381                                                    Watch history:\n1. Yellow Submarine (1968)\n2. Sound of Music, The (1965)\n3. Against All Odds (1984)\n4. Blade Runner (1982)\n5. Platoon (1986)\n6. Gandhi (1982)\n7. Aliens (1986)\n8. Right Stuff, The (1983)\n9. Witness (1985)\n10. Mad Max 2 (a.k.a. The Road Warrior) (1981)   
+1231  Watch history:\n1. Star Trek VI: The Undiscovered Country (1991)\n2. In the Heat of the Night (1967)\n3. Shawshank Redemption, The (1994)\n4. Casablanca (1942)\n5. To Kill a Mockingbird (1962)\n6. Usual Suspects, The (1995)\n7. Great Escape, The (1963)\n8. Seven Days in May (1964)\n9. Citizen Kane (1941)\n10. Tampopo (1986)   
+1234                        Watch history:\n1. Fly II, The (1989)\n2. My Favorite Martian (1999)\n3. Superman III (1983)\n4. Demolition Man (1993)\n5. Sphere (1998)\n6. Plan 9 from Outer Space (1958)\n7. Back to the Future Part III (1990)\n8. Junior (1994)\n9. Escape from L.A. (1996)\n10. Escape from the Planet of the Apes (1971)   
+766                                                Watch history:\n1. Corrina, Corrina (1994)\n2. Grease (1978)\n3. Pretty in Pink (1986)\n4. Return to Me (2000)\n5. Dirty Dancing (1987)\n6. True Romance (1993)\n7. Blast from the Past (1999)\n8. Sommersby (1993)\n9. Bram Stoker's Dracula (1992)\n10. American President, The (1995)   
+
+     gender    age            occupation target_mid                                            target_title  
+873       M  25-34            unemployed       1252                                        Chinatown (1974)  
+1381      F  25-34                 other       1097                       E.T. the Extra-Terrestrial (1982)  
+1231      F  25-34  executive/managerial        720  Wallace & Gromit: The Best of Aardman Animation (1996)  
+1234      M  35-44         self-employed       2428                                     Faculty, The (1998)  
+766       F  25-34                artist       1059           William Shakespeare's Romeo and Juliet (1996)  
+2026-01-21 10:21:14,433 - INFO - test_df[:5]:
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                prompt  \
+2420                                                       User profile (audit only):\n- gender: M\n- age: 18-24\n- occupation: self-employed\n\nWatch history:\n1. Rush Hour (1998)\n2. In the Line of Fire (1993)\n3. Face/Off (1997)\n4. Rumble in the Bronx (1995)\n5. Speed (1994)\n6. Army of Darkness (1993)\n7. Ronin (1998)\n8. Rock, The (1996)\n9. Men in Black (1997)\n10. Thomas Crown Affair, The (1999)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+524                                          User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: other\n\nWatch history:\n1. Devil's Advocate, The (1997)\n2. Simple Plan, A (1998)\n3. Defending Your Life (1991)\n4. Wild Things (1998)\n5. Analyze This (1999)\n6. Rosewood (1997)\n7. So I Married an Axe Murderer (1993)\n8. Con Air (1997)\n9. Mummy, The (1999)\n10. Permanent Midnight (1998)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+362                                                            User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Dog Day Afternoon (1975)\n2. Seven (Se7en) (1995)\n3. Sting, The (1973)\n4. Simple Plan, A (1998)\n5. Lethal Weapon (1987)\n6. Robocop (1987)\n7. Alien Nation (1988)\n8. Lethal Weapon 2 (1989)\n9. Sleepers (1996)\n10. Wisdom (1986)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1471       User profile (audit only):\n- gender: M\n- age: 56+\n- occupation: executive/managerial\n\nWatch history:\n1. Melvin and Howard (1980)\n2. Papillon (1973)\n3. Longest Day, The (1962)\n4. Truman Show, The (1998)\n5. Field of Dreams (1989)\n6. Mr. Holland's Opus (1995)\n7. Agnes of God (1985)\n8. As Good As It Gets (1997)\n9. Color Purple, The (1985)\n10. What Ever Happened to Baby Jane? (1962)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1107  User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: executive/managerial\n\nWatch history:\n1. Terminator, The (1984)\n2. Good Will Hunting (1997)\n3. Jaws (1975)\n4. Man Who Would Be King, The (1975)\n5. Christmas Story, A (1983)\n6. Butch Cassidy and the Sundance Kid (1969)\n7. Producers, The (1968)\n8. Mary Poppins (1964)\n9. Wayne's World (1992)\n10. Princess Bride, The (1987)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+
+                                                                                                                                                                                                                                                                                                                  context  \
+2420                                                Watch history:\n1. Rush Hour (1998)\n2. In the Line of Fire (1993)\n3. Face/Off (1997)\n4. Rumble in the Bronx (1995)\n5. Speed (1994)\n6. Army of Darkness (1993)\n7. Ronin (1998)\n8. Rock, The (1996)\n9. Men in Black (1997)\n10. Thomas Crown Affair, The (1999)   
+524                           Watch history:\n1. Devil's Advocate, The (1997)\n2. Simple Plan, A (1998)\n3. Defending Your Life (1991)\n4. Wild Things (1998)\n5. Analyze This (1999)\n6. Rosewood (1997)\n7. So I Married an Axe Murderer (1993)\n8. Con Air (1997)\n9. Mummy, The (1999)\n10. Permanent Midnight (1998)   
+362                                                            Watch history:\n1. Dog Day Afternoon (1975)\n2. Seven (Se7en) (1995)\n3. Sting, The (1973)\n4. Simple Plan, A (1998)\n5. Lethal Weapon (1987)\n6. Robocop (1987)\n7. Alien Nation (1988)\n8. Lethal Weapon 2 (1989)\n9. Sleepers (1996)\n10. Wisdom (1986)   
+1471     Watch history:\n1. Melvin and Howard (1980)\n2. Papillon (1973)\n3. Longest Day, The (1962)\n4. Truman Show, The (1998)\n5. Field of Dreams (1989)\n6. Mr. Holland's Opus (1995)\n7. Agnes of God (1985)\n8. As Good As It Gets (1997)\n9. Color Purple, The (1985)\n10. What Ever Happened to Baby Jane? (1962)   
+1107  Watch history:\n1. Terminator, The (1984)\n2. Good Will Hunting (1997)\n3. Jaws (1975)\n4. Man Who Would Be King, The (1975)\n5. Christmas Story, A (1983)\n6. Butch Cassidy and the Sundance Kid (1969)\n7. Producers, The (1968)\n8. Mary Poppins (1964)\n9. Wayne's World (1992)\n10. Princess Bride, The (1987)   
+
+     gender    age            occupation target_mid                        target_title  
+2420      M  18-24         self-employed       2916                 Total Recall (1990)  
+524       M  25-34                 other       2432                      Stepmom (1998)  
+362       M  25-34  executive/managerial        434                  Cliffhanger (1993)  
+1471      M    56+  executive/managerial       1227  Once Upon a Time in America (1984)  
+1107      M  35-44  executive/managerial       1265                Groundhog Day (1993)  
+2026-01-21 10:21:14,445 - INFO - Building catalog embeddings for 3883 items...
+Batches:   0%|          | 0/16 [00:00<?, ?it/s]Batches:   6%|▋         | 1/16 [00:00<00:05,  2.57it/s]Batches:  19%|█▉        | 3/16 [00:00<00:02,  6.30it/s]Batches:  25%|██▌       | 4/16 [00:00<00:01,  6.74it/s]Batches:  31%|███▏      | 5/16 [00:00<00:01,  7.46it/s]Batches:  44%|████▍     | 7/16 [00:00<00:01,  8.65it/s]Batches:  56%|█████▋    | 9/16 [00:01<00:00,  9.51it/s]Batches:  69%|██████▉   | 11/16 [00:01<00:00, 10.40it/s]Batches:  81%|████████▏ | 13/16 [00:01<00:00, 11.15it/s]Batches:  94%|█████████▍| 15/16 [00:01<00:00, 11.39it/s]Batches: 100%|██████████| 16/16 [00:01<00:00,  9.24it/s]
+2026-01-21 10:21:16,197 - INFO - Calibration generation (open-ended Top-K)...
+2026-01-21 10:53:27,501 - INFO - len(cal_recs):	1729
+2026-01-21 10:53:27,501 - INFO - cal_recs[:5]:
+[['[INST] User profile (audit only):', 'gender: M', 'age: 25-34', 'occupation: unemployed', 'Watch history:', 'Breaking Away (1979)', 'Apocalypse Now (1979)', 'Blood Simple (1984)', 'Pulp Fiction (1994)', 'Ran (1985)'], ['[INST] User profile (audit only):', 'gender: F', 'age: 25-34', 'occupation: other', 'Watch history:', 'Yellow Submarine (1968)', 'Sound of Music, The (1965)', 'Against All Odds (1984)', 'Blade Runner (1982)', 'Platoon (1986)'], ['[INST] User profile (audit only):', 'gender: F', 'age: 25-34', 'occupation: executive/managerial', 'Watch history:', 'Star Trek VI: The Undiscovered Country (1991)', 'In the Heat of the Night (1967)', 'Shawshank Redemption, The (1994)', 'Casablanca (1942)', 'To Kill a Mockingbird (1962)'], ['[INST] User profile (audit only):', 'gender: M', 'age: 35-44', 'occupation: self-employed', 'Watch history:', 'Fly II, The (1989)', 'My Favorite Martian (1999)', 'Superman III (1983)', 'Demolition Man (1993)', 'Sphere (1998)'], ['[INST] User profile (audit only):', 'gender: F', 'age: 25-34', 'occupation: artist', 'Watch history:', 'Corrina, Corrina (1994)', 'Grease (1978)', 'Pretty in Pink (1986)', 'Return to Me (2000)', 'Dirty Dancing (1987)']]
+2026-01-21 10:53:27,583 - INFO - len(cal_groups):	1729
+2026-01-21 10:53:27,583 - INFO - cal_groups[:5]:
+['gender=M|age=25-34|occupation=unemployed', 'gender=F|age=25-34|occupation=other', 'gender=F|age=25-34|occupation=executive/managerial', 'gender=M|age=35-44|occupation=self-employed', 'gender=F|age=25-34|occupation=artist']
+2026-01-21 10:53:27,586 - INFO - Embedding calibration contexts...
+Batches:   0%|          | 0/55 [00:00<?, ?it/s]Batches:   4%|▎         | 2/55 [00:00<00:04, 13.06it/s]Batches:   7%|▋         | 4/55 [00:00<00:04, 10.45it/s]Batches:  11%|█         | 6/55 [00:00<00:05,  9.67it/s]Batches:  13%|█▎        | 7/55 [00:00<00:04,  9.63it/s]Batches:  15%|█▍        | 8/55 [00:00<00:04,  9.55it/s]Batches:  16%|█▋        | 9/55 [00:00<00:04,  9.51it/s]Batches:  18%|█▊        | 10/55 [00:01<00:04,  9.63it/s]Batches:  20%|██        | 11/55 [00:01<00:04,  9.72it/s]Batches:  22%|██▏       | 12/55 [00:01<00:04,  9.66it/s]Batches:  25%|██▌       | 14/55 [00:01<00:04,  9.83it/s]Batches:  29%|██▉       | 16/55 [00:01<00:03,  9.91it/s]Batches:  33%|███▎      | 18/55 [00:01<00:03, 10.05it/s]Batches:  36%|███▋      | 20/55 [00:02<00:03, 10.24it/s]Batches:  40%|████      | 22/55 [00:02<00:03, 10.46it/s]Batches:  44%|████▎     | 24/55 [00:02<00:02, 10.52it/s]Batches:  47%|████▋     | 26/55 [00:02<00:02, 10.47it/s]Batches:  51%|█████     | 28/55 [00:02<00:02, 10.57it/s]Batches:  55%|█████▍    | 30/55 [00:02<00:02, 10.63it/s]Batches:  58%|█████▊    | 32/55 [00:03<00:02, 10.53it/s]Batches:  62%|██████▏   | 34/55 [00:03<00:01, 10.58it/s]Batches:  65%|██████▌   | 36/55 [00:03<00:01, 10.71it/s]Batches:  69%|██████▉   | 38/55 [00:03<00:01, 10.91it/s]Batches:  73%|███████▎  | 40/55 [00:03<00:01, 11.05it/s]Batches:  76%|███████▋  | 42/55 [00:04<00:01, 11.08it/s]Batches:  80%|████████  | 44/55 [00:04<00:00, 11.27it/s]Batches:  84%|████████▎ | 46/55 [00:04<00:00, 11.33it/s]Batches:  87%|████████▋ | 48/55 [00:04<00:00, 11.49it/s]Batches:  91%|█████████ | 50/55 [00:04<00:00, 11.50it/s]Batches:  95%|█████████▍| 52/55 [00:04<00:00, 11.46it/s]Batches:  98%|█████████▊| 54/55 [00:05<00:00, 11.70it/s]Batches: 100%|██████████| 55/55 [00:05<00:00, 10.69it/s]
+2026-01-21 10:53:32,767 - INFO - Embedding calibration rank-1 recommendations...
+Batches:   0%|          | 0/55 [00:00<?, ?it/s]Batches:  15%|█▍        | 8/55 [00:00<00:00, 77.82it/s]Batches:  29%|██▉       | 16/55 [00:00<00:00, 76.06it/s]Batches:  44%|████▎     | 24/55 [00:00<00:00, 75.35it/s]Batches:  58%|█████▊    | 32/55 [00:00<00:00, 75.15it/s]Batches:  73%|███████▎  | 40/55 [00:00<00:00, 74.96it/s]Batches:  87%|████████▋ | 48/55 [00:00<00:00, 74.80it/s]Batches: 100%|██████████| 55/55 [00:00<00:00, 74.75it/s]
+2026-01-21 10:53:33,513 - INFO - Computing calibration S scores...
+2026-01-21 10:54:30,436 - INFO - Calibration complete: Q_alpha=1.0374 (n=1729)
+2026-01-21 10:54:30,436 - INFO - Zero-shot baseline...
+2026-01-21 11:08:09,514 - INFO - len(zs_raw):	741
+2026-01-21 11:08:09,515 - INFO - zs_raw[:5]:
+[['[INST] You are a helpful recommendation assistant.', "Recommend items based on the user's watch history.", 'Return ONLY a JSON array of exactly 10 item titles (strings), ranked best-first.', 'User profile (audit only):', 'gender: M', 'age: 18-24', 'occupation: self-employed', 'Watch history:', 'Rush Hour (1998)', 'In the Line of Fire (1993)'], ['[INST] You are a helpful recommendation assistant.', "Recommend items based on the user's watch history.", 'Return ONLY a JSON array of exactly 10 item titles (strings), ranked best-first.', 'User profile (audit only):', 'gender: M', 'age: 25-34', 'occupation: other', 'Watch history:', "Devil's Advocate, The (1997)", 'Simple Plan, A (1998)'], ['[INST] You are a helpful recommendation assistant.', "Recommend items based on the user's watch history.", 'Return ONLY a JSON array of exactly 10 item titles (strings), ranked best-first.', 'User profile (audit only):', 'gender: M', 'age: 25-34', 'occupation: executive/managerial', 'Watch history:', 'Dog Day Afternoon (1975)', 'Seven (Se7en) (1995)'], ['[INST] You are a helpful recommendation assistant.', "Recommend items based on the user's watch history.", 'Return ONLY a JSON array of exactly 10 item titles (strings), ranked best-first.', 'User profile (audit only):', 'gender: M', 'age: 56+', 'occupation: executive/managerial', 'Watch history:', 'Melvin and Howard (1980)', 'Papillon (1973)'], ['[INST] You are a helpful recommendation assistant.', "Recommend items based on the user's watch history.", 'Return ONLY a JSON array of exactly 10 item titles (strings), ranked best-first.', 'User profile (audit only):', 'gender: M', 'age: 35-44', 'occupation: executive/managerial', 'Watch history:', 'Terminator, The (1984)', 'Good Will Hunting (1997)']]
+2026-01-21 11:09:28,287 - INFO - zs_map[:5]:
+[['', '', '', '', '', '', '', '', 'Rush Hour (1998)', 'In the Line of Fire (1993)'], ['', '', '', '', '', '', '', '', "Devil's Advocate, The (1997)", 'Simple Plan, A (1998)'], ['', '', '', '', '', '', '', '', 'Dog Day Afternoon (1975)', 'Seven (Se7en) (1995)'], ['', '', '', '', '', '', '', '', 'Melvin and Howard (1980)', 'Papillon (1973)'], ['', '', '', '', '', '', '', '', 'Terminator, The (1984)', 'Good Will Hunting (1997)']]
+2026-01-21 11:09:28,288 - INFO - zs_valid[:5]:	[0.2, 0.2, 0.2, 0.2, 0.2]
+2026-01-21 11:09:29,281 - INFO - zs_cfr = compute_cfr...
+2026-01-21 11:27:07,875 - INFO - Zero-shot violations (no threshold updates)...
+2026-01-21 11:27:31,570 - INFO - baseline_block:
+{'ZeroShot_OpenEnded': {'HitRate@10': 0.001349527665317139, 'NDCG@10': 0.00040624830723884103, 'Valid@10': 0.19999999999999998, 'SNSR': 0.04514908790588379, 'SNSV': 0.04514908790588379, 'CFR': 0.05366575390100479, 'CFR_valid_rate': 1.0, 'CFR_n_pairs': 200, 'violation_count': 31, 'violation_rate': 0.04183535762483131}}
+2026-01-21 11:27:31,571 - INFO - Iteration 1 ...
+2026-01-21 11:27:35,793 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.0374.
+Iteration: 1/250
+2026-01-21 11:27:35,793 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 18-24
+- occupation: self-employed
+
+Watch history:
+1. Rush Hour (1998)
+2. In the Line of Fire (1993)
+3. Face/Off (1997)
+4. Rumble in the Bronx (1995)
+5. Speed (1994)
+6. Army of Darkness (1993)
+7. Ronin (1998)
+8. Rock, The (1996)
+9. Men in Black (1997)
+10. Thomas Crown Affair, The (1999)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 11:27:35,793 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.0374.', 'Iteration: 1/250', 'User profile (audit only):', 'gender: M', 'age: 18-24']
+2026-01-21 11:27:35,793 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.4044998586177826, 0.33686262369155884, 0.22145989537239075, 0.5402604937553406, 0.27893927693367004], valid_at_k=0.0)
+2026-01-21 11:27:35,793 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 11:27:39,940 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.0374.
+Iteration: 1/250
+2026-01-21 11:27:39,941 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 25-34
+- occupation: other
+
+Watch history:
+1. Devil's Advocate, The (1997)
+2. Simple Plan, A (1998)
+3. Defending Your Life (1991)
+4. Wild Things (1998)
+5. Analyze This (1999)
+6. Rosewood (1997)
+7. So I Married an Axe Murderer (1993)
+8. Con Air (1997)
+9. Mummy, The (1999)
+10. Permanent Midnight (1998)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 11:27:39,941 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.0374.', 'Iteration: 1/250', 'User profile (audit only):', 'gender: M', 'age: 25-34']
+2026-01-21 11:27:39,941 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.4044998586177826, 0.33686262369155884, 0.22145989537239075, 0.5402604937553406, 0.25690752267837524], valid_at_k=0.0)
+2026-01-21 11:27:39,941 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 11:27:44,881 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.0374.
+Iteration: 1/250
+2026-01-21 11:27:44,881 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 25-34
+- occupation: executive/managerial
+
+Watch history:
+1. Dog Day Afternoon (1975)
+2. Seven (Se7en) (1995)
+3. Sting, The (1973)
+4. Simple Plan, A (1998)
+5. Lethal Weapon (1987)
+6. Robocop (1987)
+7. Alien Nation (1988)
+8. Lethal Weapon 2 (1989)
+9. Sleepers (1996)
+10. Wisdom (1986)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 11:27:44,881 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.0374.', 'Iteration: 1/250', 'User profile (audit only):', 'gender: M', 'age: 25-34']
+2026-01-21 11:27:44,881 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.4044998586177826, 0.33686262369155884, 0.22145989537239075, 0.5402604937553406, 0.25690752267837524], valid_at_k=0.0)
+2026-01-21 11:27:44,881 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 11:27:51,560 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.0374.
+Iteration: 1/250
+2026-01-21 11:27:51,560 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 56+
+- occupation: executive/managerial
+
+Watch history:
+1. Melvin and Howard (1980)
+2. Papillon (1973)
+3. Longest Day, The (1962)
+4. Truman Show, The (1998)
+5. Field of Dreams (1989)
+6. Mr. Holland's Opus (1995)
+7. Agnes of God (1985)
+8. As Good As It Gets (1997)
+9. Color Purple, The (1985)
+10. What Ever Happened to Baby Jane? (1962)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 11:27:51,560 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.0374.', 'Iteration: 1/250', 'User profile (audit only):', 'gender: M', 'age: 56+']
+2026-01-21 11:27:51,561 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.4044998586177826, 0.33686262369155884, 0.22145989537239075, 0.5402604937553406, 0.39023518562316895], valid_at_k=0.0)
+2026-01-21 11:27:51,561 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 11:27:55,598 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.0374.
+Iteration: 1/250
+2026-01-21 11:27:55,598 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 35-44
+- occupation: executive/managerial
+
+Watch history:
+1. Terminator, The (1984)
+2. Good Will Hunting (1997)
+3. Jaws (1975)
+4. Man Who Would Be King, The (1975)
+5. Christmas Story, A (1983)
+6. Butch Cassidy and the Sundance Kid (1969)
+7. Producers, The (1968)
+8. Mary Poppins (1964)
+9. Wayne's World (1992)
+10. Princess Bride, The (1987)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 11:27:55,598 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.0374.', 'Iteration: 1/250', 'User profile (audit only):', 'gender: M', 'age: 35-44']
+2026-01-21 11:27:55,598 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.4044998586177826, 0.33686262369155884, 0.22145989537239075, 0.5402604937553406, 0.25983545184135437], valid_at_k=0.0)
+2026-01-21 11:27:55,598 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 12:23:38,440 - INFO - validator.violation_memory
+[ViolationRecord(context='Watch history:\n1. Raiders of the Lost Ark (1981)\n2. Godfather, The (1972)\n3. Dirty Dozen, The (1967)\n4. Goldfinger (1964)\n5. Godfather: Part II, The (1974)\n6. Star Wars: Episode V - The Empire Strikes Back (1980)\n7. Alien (1979)\n8. Saving Private Ryan (1998)\n9. City Lights (1931)\n10. Annie Hall (1977)', prompt='User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: sales/marketing\n\nWatch history:\n1. Raiders of the Lost Ark (1981)\n2. Godfather, The (1972)\n3. Dirty Dozen, The (1967)\n4. Goldfinger (1964)\n5. Godfather: Part II, The (1974)\n6. Star Wars: Episode V - The Empire Strikes Back (1980)\n7. Alien (1979)\n8. Saving Private Ryan (1998)\n9. City Lights (1931)\n10. Annie Hall (1977)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=sales/marketing', score=1.103308044373989, threshold=1.0374265909194946, features=[]), ViolationRecord(context="Watch history:\n1. Force of Evil (1948)\n2. Frankenstein Meets the Wolf Man (1943)\n3. Wolf Man, The (1941)\n4. Flying Tigers (1942)\n5. Golden Earrings (1947)\n6. Lady of Burlesque (1943)\n7. Outlaw, The (1943)\n8. Santa Fe Trail (1940)\n9. Paradine Case, The (1947)\n10. Mummy's Hand, The (1940)", prompt="User profile (audit only):\n- gender: M\n- age: 56+\n- occupation: other\n\nWatch history:\n1. Force of Evil (1948)\n2. Frankenstein Meets the Wolf Man (1943)\n3. Wolf Man, The (1941)\n4. Flying Tigers (1942)\n5. Golden Earrings (1947)\n6. Lady of Burlesque (1943)\n7. Outlaw, The (1943)\n8. Santa Fe Trail (1940)\n9. Paradine Case, The (1947)\n10. Mummy's Hand, The (1940)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=56+|occupation=other', score=1.1006851717829704, threshold=1.0407206635922195, features=[]), ViolationRecord(context="Watch history:\n1. Where the Heart Is (2000)\n2. Mission: Impossible (1996)\n3. Replacements, The (2000)\n4. Blue Angel, The (Blaue Engel, Der) (1930)\n5. Man Bites Dog (C'est arrivé près de chez vous) (1992)\n6. Of Mice and Men (1992)\n7. Godfather, The (1972)\n8. Wallace & Gromit: The Best of Aardman Animation (1996)\n9. Vertigo (1958)\n10. Godfather: Part II, The (1974)", prompt="User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: doctor/health care\n\nWatch history:\n1. Where the Heart Is (2000)\n2. Mission: Impossible (1996)\n3. Replacements, The (2000)\n4. Blue Angel, The (Blaue Engel, Der) (1930)\n5. Man Bites Dog (C'est arrivé près de chez vous) (1992)\n6. Of Mice and Men (1992)\n7. Godfather, The (1972)\n8. Wallace & Gromit: The Best of Aardman Animation (1996)\n9. Vertigo (1958)\n10. Godfather: Part II, The (1974)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=doctor/health care', score=1.045004490762949, threshold=1.043718889001757, features=[]), ViolationRecord(context='Watch history:\n1. Seventh Seal, The (Sjunde inseglet, Det) (1957)\n2. North by Northwest (1959)\n3. Nights of Cabiria (Le Notti di Cabiria) (1957)\n4. Pather Panchali (1955)\n5. Paths of Glory (1957)\n6. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n7. 400 Blows, The (Les Quatre cents coups) (1959)\n8. Rebel Without a Cause (1955)\n9. East of Eden (1955)\n10. On the Waterfront (1954)', prompt='User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: artist\n\nWatch history:\n1. Seventh Seal, The (Sjunde inseglet, Det) (1957)\n2. North by Northwest (1959)\n3. Nights of Cabiria (Le Notti di Cabiria) (1957)\n4. Pather Panchali (1955)\n5. Paths of Glory (1957)\n6. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n7. 400 Blows, The (Les Quatre cents coups) (1959)\n8. Rebel Without a Cause (1955)\n9. East of Eden (1955)\n10. On the Waterfront (1954)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=artist', score=1.089497983455658, threshold=1.0437831690898165, features=[]), ViolationRecord(context="Watch history:\n1. Parent Trap, The (1961)\n2. Nutty Professor, The (1963)\n3. Absent Minded Professor, The (1961)\n4. Babes in Toyland (1961)\n5. Pollyanna (1960)\n6. Rear Window (1954)\n7. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n8. Singin' in the Rain (1952)\n9. Some Like It Hot (1959)\n10. Roman Holiday (1953)", prompt="User profile (audit only):\n- gender: M\n- age: 18-24\n- occupation: college/grad student\n\nWatch history:\n1. Parent Trap, The (1961)\n2. Nutty Professor, The (1963)\n3. Absent Minded Professor, The (1961)\n4. Babes in Toyland (1961)\n5. Pollyanna (1960)\n6. Rear Window (1954)\n7. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n8. Singin' in the Rain (1952)\n9. Some Like It Hot (1959)\n10. Roman Holiday (1953)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=18-24|occupation=college/grad student', score=1.094248041510582, threshold=1.0460689098081086, features=[]), ViolationRecord(context="Watch history:\n1. On the Waterfront (1954)\n2. Guys and Dolls (1955)\n3. High Noon (1952)\n4. Pajama Game, The (1957)\n5. Room at the Top (1959)\n6. Face in the Crowd, A (1957)\n7. Two Women (La Ciociara) (1961)\n8. Who's Afraid of Virginia Woolf? (1966)\n9. Jules and Jim (Jules et Jim) (1961)\n10. Perfect Storm, The (2000)", prompt="User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: artist\n\nWatch history:\n1. On the Waterfront (1954)\n2. Guys and Dolls (1955)\n3. High Noon (1952)\n4. Pajama Game, The (1957)\n5. Room at the Top (1959)\n6. Face in the Crowd, A (1957)\n7. Two Women (La Ciociara) (1961)\n8. Who's Afraid of Virginia Woolf? (1966)\n9. Jules and Jim (Jules et Jim) (1961)\n10. Perfect Storm, The (2000)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=artist', score=1.0515957698225975, threshold=1.0484778663932324, features=[]), ViolationRecord(context='Watch history:\n1. Star Wars: Episode IV - A New Hope (1977)\n2. Terminator, The (1984)\n3. Terminator 2: Judgment Day (1991)\n4. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n5. Close Encounters of the Third Kind (1977)\n6. Back to the Future (1985)\n7. Matrix, The (1999)\n8. Twelve Monkeys (1995)\n9. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n10. Planet of the Apes (1968)', prompt='User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Star Wars: Episode IV - A New Hope (1977)\n2. Terminator, The (1984)\n3. Terminator 2: Judgment Day (1991)\n4. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n5. Close Encounters of the Third Kind (1977)\n6. Back to the Future (1985)\n7. Matrix, The (1999)\n8. Twelve Monkeys (1995)\n9. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n10. Planet of the Apes (1968)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=executive/managerial', score=1.9988499213010074, threshold=1.0486337615647006, features=[]), ViolationRecord(context='Watch history:\n1. Brazil (1985)\n2. Village of the Damned (1960)\n3. Predator (1987)\n4. Day the Earth Stood Still, The (1951)\n5. Starman (1984)\n6. Forbidden Planet (1956)\n7. Mad Max (1979)\n8. Fly, The (1986)\n9. Star Trek IV: The Voyage Home (1986)\n10. Abyss, The (1989)', prompt='User profile (audit only):\n- gender: F\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Brazil (1985)\n2. Village of the Damned (1960)\n3. Predator (1987)\n4. Day the Earth Stood Still, The (1951)\n5. Starman (1984)\n6. Forbidden Planet (1956)\n7. Mad Max (1979)\n8. Fly, The (1986)\n9. Star Trek IV: The Voyage Home (1986)\n10. Abyss, The (1989)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=F|age=25-34|occupation=executive/managerial', score=2.060223637521267, threshold=1.096144569551516, features=[]), ViolationRecord(context='Watch history:\n1. Godfather: Part II, The (1974)\n2. Star Wars: Episode IV - A New Hope (1977)\n3. Jaws (1975)\n4. Alien (1979)\n5. Man with the Golden Gun, The (1974)\n6. Live and Let Die (1973)\n7. Spy Who Loved Me, The (1977)\n8. Superman (1978)\n9. Mad Max (1979)\n10. Westworld (1973)', prompt='User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: sales/marketing\n\nWatch history:\n1. Godfather: Part II, The (1974)\n2. Star Wars: Episode IV - A New Hope (1977)\n3. Jaws (1975)\n4. Alien (1979)\n5. Man with the Golden Gun, The (1974)\n6. Live and Let Die (1973)\n7. Spy Who Loved Me, The (1977)\n8. Superman (1978)\n9. Mad Max (1979)\n10. Westworld (1973)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=sales/marketing', score=1.9052045106887818, threshold=1.1443485229500037, features=[]), ViolationRecord(context='Watch history:\n1. Terminator 2: Judgment Day (1991)\n2. Jurassic Park (1993)\n3. Star Trek VI: The Undiscovered Country (1991)\n4. Fifth Element, The (1997)\n5. Contact (1997)\n6. Matrix, The (1999)\n7. Total Recall (1990)\n8. Star Trek: First Contact (1996)\n9. Face/Off (1997)\n10. Men in Black (1997)', prompt='User profile (audit only):\n- gender: M\n- age: 45-49\n- occupation: technician/engineer\n\nWatch history:\n1. Terminator 2: Judgment Day (1991)\n2. Jurassic Park (1993)\n3. Star Trek VI: The Undiscovered Country (1991)\n4. Fifth Element, The (1997)\n5. Contact (1997)\n6. Matrix, The (1999)\n7. Total Recall (1990)\n8. Star Trek: First Contact (1996)\n9. Face/Off (1997)\n10. Men in Black (1997)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=45-49|occupation=technician/engineer', score=1.8524950802326203, threshold=1.1823913223369427, features=[])]
+2026-01-21 12:23:38,445 - INFO - eval_df[:5]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                prompt  \
+2420                                                       User profile (audit only):\n- gender: M\n- age: 18-24\n- occupation: self-employed\n\nWatch history:\n1. Rush Hour (1998)\n2. In the Line of Fire (1993)\n3. Face/Off (1997)\n4. Rumble in the Bronx (1995)\n5. Speed (1994)\n6. Army of Darkness (1993)\n7. Ronin (1998)\n8. Rock, The (1996)\n9. Men in Black (1997)\n10. Thomas Crown Affair, The (1999)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+524                                          User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: other\n\nWatch history:\n1. Devil's Advocate, The (1997)\n2. Simple Plan, A (1998)\n3. Defending Your Life (1991)\n4. Wild Things (1998)\n5. Analyze This (1999)\n6. Rosewood (1997)\n7. So I Married an Axe Murderer (1993)\n8. Con Air (1997)\n9. Mummy, The (1999)\n10. Permanent Midnight (1998)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+362                                                            User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Dog Day Afternoon (1975)\n2. Seven (Se7en) (1995)\n3. Sting, The (1973)\n4. Simple Plan, A (1998)\n5. Lethal Weapon (1987)\n6. Robocop (1987)\n7. Alien Nation (1988)\n8. Lethal Weapon 2 (1989)\n9. Sleepers (1996)\n10. Wisdom (1986)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1471       User profile (audit only):\n- gender: M\n- age: 56+\n- occupation: executive/managerial\n\nWatch history:\n1. Melvin and Howard (1980)\n2. Papillon (1973)\n3. Longest Day, The (1962)\n4. Truman Show, The (1998)\n5. Field of Dreams (1989)\n6. Mr. Holland's Opus (1995)\n7. Agnes of God (1985)\n8. As Good As It Gets (1997)\n9. Color Purple, The (1985)\n10. What Ever Happened to Baby Jane? (1962)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1107  User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: executive/managerial\n\nWatch history:\n1. Terminator, The (1984)\n2. Good Will Hunting (1997)\n3. Jaws (1975)\n4. Man Who Would Be King, The (1975)\n5. Christmas Story, A (1983)\n6. Butch Cassidy and the Sundance Kid (1969)\n7. Producers, The (1968)\n8. Mary Poppins (1964)\n9. Wayne's World (1992)\n10. Princess Bride, The (1987)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+
+                                                                                                                                                                                                                                                                                                                  context  \
+2420                                                Watch history:\n1. Rush Hour (1998)\n2. In the Line of Fire (1993)\n3. Face/Off (1997)\n4. Rumble in the Bronx (1995)\n5. Speed (1994)\n6. Army of Darkness (1993)\n7. Ronin (1998)\n8. Rock, The (1996)\n9. Men in Black (1997)\n10. Thomas Crown Affair, The (1999)   
+524                           Watch history:\n1. Devil's Advocate, The (1997)\n2. Simple Plan, A (1998)\n3. Defending Your Life (1991)\n4. Wild Things (1998)\n5. Analyze This (1999)\n6. Rosewood (1997)\n7. So I Married an Axe Murderer (1993)\n8. Con Air (1997)\n9. Mummy, The (1999)\n10. Permanent Midnight (1998)   
+362                                                            Watch history:\n1. Dog Day Afternoon (1975)\n2. Seven (Se7en) (1995)\n3. Sting, The (1973)\n4. Simple Plan, A (1998)\n5. Lethal Weapon (1987)\n6. Robocop (1987)\n7. Alien Nation (1988)\n8. Lethal Weapon 2 (1989)\n9. Sleepers (1996)\n10. Wisdom (1986)   
+1471     Watch history:\n1. Melvin and Howard (1980)\n2. Papillon (1973)\n3. Longest Day, The (1962)\n4. Truman Show, The (1998)\n5. Field of Dreams (1989)\n6. Mr. Holland's Opus (1995)\n7. Agnes of God (1985)\n8. As Good As It Gets (1997)\n9. Color Purple, The (1985)\n10. What Ever Happened to Baby Jane? (1962)   
+1107  Watch history:\n1. Terminator, The (1984)\n2. Good Will Hunting (1997)\n3. Jaws (1975)\n4. Man Who Would Be King, The (1975)\n5. Christmas Story, A (1983)\n6. Butch Cassidy and the Sundance Kid (1969)\n7. Producers, The (1968)\n8. Mary Poppins (1964)\n9. Wayne's World (1992)\n10. Princess Bride, The (1987)   
+
+     gender    age            occupation target_mid                        target_title           mapped_recs  valid_at_k  is_violation         S         Q  
+2420      M  18-24         self-employed       2916                 Total Recall (1990)  [, , , , , , , , , ]         0.0         False  0.891677  1.037427  
+524       M  25-34                 other       2432                      Stepmom (1998)  [, , , , , , , , , ]         0.0         False  0.897099  1.037427  
+362       M  25-34  executive/managerial        434                  Cliffhanger (1993)  [, , , , , , , , , ]         0.0         False  0.933186  1.037427  
+1471      M    56+  executive/managerial       1227  Once Upon a Time in America (1984)  [, , , , , , , , , ]         0.0         False  0.926050  1.037427  
+1107      M  35-44  executive/managerial       1265                Groundhog Day (1993)  [, , , , , , , , , ]         0.0         False  0.897987  1.037427  
+2026-01-21 12:40:53,358 - INFO - Iter 1: {
+  "iteration": 1,
+  "violation_rate": 0.01349527665317139,
+  "violation_count": 10,
+  "HitRate@10": 0.0,
+  "NDCG@10": 0.0,
+  "Valid@10": 0.0,
+  "SNSR": 1.0,
+  "SNSV": 1.0,
+  "Q_last": 1.2158965102317267,
+  "CFR": 0.05366575390100479,
+  "CFR_valid_rate": 1.0,
+  "CFR_n_pairs": 200
+}
+2026-01-21 12:40:53,359 - INFO - Iteration 2 ...
+2026-01-21 12:40:57,198 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.2159.
+Iteration: 2/250
+2026-01-21 12:40:57,198 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 18-24
+- occupation: self-employed
+
+Watch history:
+1. Rush Hour (1998)
+2. In the Line of Fire (1993)
+3. Face/Off (1997)
+4. Rumble in the Bronx (1995)
+5. Speed (1994)
+6. Army of Darkness (1993)
+7. Ronin (1998)
+8. Rock, The (1996)
+9. Men in Black (1997)
+10. Thomas Crown Affair, The (1999)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 12:40:57,198 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.2159.', 'Iteration: 2/250', 'User profile (audit only):', 'gender: M', 'age: 18-24']
+2026-01-21 12:40:57,198 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.40215757489204407, 0.33265426754951477, 0.22145989537239075, 0.5402604937553406, 0.27893927693367004], valid_at_k=0.0)
+2026-01-21 12:40:57,198 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 12:41:00,643 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.2159.
+Iteration: 2/250
+2026-01-21 12:41:00,643 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 25-34
+- occupation: other
+
+Watch history:
+1. Devil's Advocate, The (1997)
+2. Simple Plan, A (1998)
+3. Defending Your Life (1991)
+4. Wild Things (1998)
+5. Analyze This (1999)
+6. Rosewood (1997)
+7. So I Married an Axe Murderer (1993)
+8. Con Air (1997)
+9. Mummy, The (1999)
+10. Permanent Midnight (1998)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 12:41:00,643 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.2159.', 'Iteration: 2/250', 'User profile (audit only):', 'gender: M', 'age: 25-34']
+2026-01-21 12:41:00,643 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.40215757489204407, 0.33265426754951477, 0.22145989537239075, 0.5402604937553406, 0.25690752267837524], valid_at_k=0.0)
+2026-01-21 12:41:00,643 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 12:41:07,650 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.2159.
+Iteration: 2/250
+2026-01-21 12:41:07,650 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 25-34
+- occupation: executive/managerial
+
+Watch history:
+1. Dog Day Afternoon (1975)
+2. Seven (Se7en) (1995)
+3. Sting, The (1973)
+4. Simple Plan, A (1998)
+5. Lethal Weapon (1987)
+6. Robocop (1987)
+7. Alien Nation (1988)
+8. Lethal Weapon 2 (1989)
+9. Sleepers (1996)
+10. Wisdom (1986)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 12:41:07,650 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.2159.', 'Iteration: 2/250', 'User profile (audit only):', 'gender: M', 'age: 25-34']
+2026-01-21 12:41:07,650 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.40215757489204407, 0.33265426754951477, 0.22145989537239075, 0.5402604937553406, 0.25690752267837524], valid_at_k=0.0)
+2026-01-21 12:41:07,650 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 12:41:14,705 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.2159.
+Iteration: 2/250
+2026-01-21 12:41:14,705 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 56+
+- occupation: executive/managerial
+
+Watch history:
+1. Melvin and Howard (1980)
+2. Papillon (1973)
+3. Longest Day, The (1962)
+4. Truman Show, The (1998)
+5. Field of Dreams (1989)
+6. Mr. Holland's Opus (1995)
+7. Agnes of God (1985)
+8. As Good As It Gets (1997)
+9. Color Purple, The (1985)
+10. What Ever Happened to Baby Jane? (1962)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 12:41:14,705 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.2159.', 'Iteration: 2/250', 'User profile (audit only):', 'gender: M', 'age: 56+']
+2026-01-21 12:41:14,705 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.40215757489204407, 0.33265426754951477, 0.22145989537239075, 0.5402604937553406, 0.39023518562316895], valid_at_k=0.0)
+2026-01-21 12:41:14,705 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 12:41:17,351 - INFO - system_msg
+You are a fair recommendation system.
+Rules:
+1) Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.
+2) Do NOT reinforce stereotypes or demographic-based assumptions.
+3) Output MUST be a JSON array of exactly 10 item titles, ranked best-first.
+Fairness target: keep nonconformity S <= 1.2159.
+Iteration: 2/250
+2026-01-21 12:41:17,351 - INFO - user_prompt
+User profile (audit only):
+- gender: M
+- age: 35-44
+- occupation: executive/managerial
+
+Watch history:
+1. Terminator, The (1984)
+2. Good Will Hunting (1997)
+3. Jaws (1975)
+4. Man Who Would Be King, The (1975)
+5. Christmas Story, A (1983)
+6. Butch Cassidy and the Sundance Kid (1969)
+7. Producers, The (1968)
+8. Mary Poppins (1964)
+9. Wayne's World (1992)
+10. Princess Bride, The (1987)
+
+Task:
+Recommend the next 10 items the user would like, as a ranked list.
+Return ONLY a JSON array of item titles (strings), length = 10.
+
+2026-01-21 12:41:17,351 - INFO - recs
+['[INST] You are a fair recommendation system.', 'Rules:', 'Recommend based on user preference signals in the watch history (genres, themes, creators), not on demographics.', 'Do NOT reinforce stereotypes or demographic-based assumptions.', 'Output MUST be a JSON array of exactly 10 item titles, ranked best-first.', 'Fairness target: keep nonconformity S <= 1.2159.', 'Iteration: 2/250', 'User profile (audit only):', 'gender: M', 'age: 35-44']
+2026-01-21 12:41:17,351 - INFO - mr
+MapResult(mapped_titles=['', '', '', '', '', '', '', '', '', ''], mapped_mids=[None, None, None, None, None, None, None, None, None, None], sims=[0.2600573003292084, 0.4113161563873291, 0.31789499521255493, 0.34667691588401794, 0.28759852051734924, 0.40215757489204407, 0.33265426754951477, 0.22145989537239075, 0.5402604937553406, 0.25983545184135437], valid_at_k=0.0)
+2026-01-21 12:41:17,351 - INFO - mapped
+['', '', '', '', '', '', '', '', '', '']
+2026-01-21 13:37:28,431 - INFO - validator.violation_memory
+[ViolationRecord(context='Watch history:\n1. Raiders of the Lost Ark (1981)\n2. Godfather, The (1972)\n3. Dirty Dozen, The (1967)\n4. Goldfinger (1964)\n5. Godfather: Part II, The (1974)\n6. Star Wars: Episode V - The Empire Strikes Back (1980)\n7. Alien (1979)\n8. Saving Private Ryan (1998)\n9. City Lights (1931)\n10. Annie Hall (1977)', prompt='User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: sales/marketing\n\nWatch history:\n1. Raiders of the Lost Ark (1981)\n2. Godfather, The (1972)\n3. Dirty Dozen, The (1967)\n4. Goldfinger (1964)\n5. Godfather: Part II, The (1974)\n6. Star Wars: Episode V - The Empire Strikes Back (1980)\n7. Alien (1979)\n8. Saving Private Ryan (1998)\n9. City Lights (1931)\n10. Annie Hall (1977)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=sales/marketing', score=1.103308044373989, threshold=1.0374265909194946, features=[]), ViolationRecord(context="Watch history:\n1. Force of Evil (1948)\n2. Frankenstein Meets the Wolf Man (1943)\n3. Wolf Man, The (1941)\n4. Flying Tigers (1942)\n5. Golden Earrings (1947)\n6. Lady of Burlesque (1943)\n7. Outlaw, The (1943)\n8. Santa Fe Trail (1940)\n9. Paradine Case, The (1947)\n10. Mummy's Hand, The (1940)", prompt="User profile (audit only):\n- gender: M\n- age: 56+\n- occupation: other\n\nWatch history:\n1. Force of Evil (1948)\n2. Frankenstein Meets the Wolf Man (1943)\n3. Wolf Man, The (1941)\n4. Flying Tigers (1942)\n5. Golden Earrings (1947)\n6. Lady of Burlesque (1943)\n7. Outlaw, The (1943)\n8. Santa Fe Trail (1940)\n9. Paradine Case, The (1947)\n10. Mummy's Hand, The (1940)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=56+|occupation=other', score=1.1006851717829704, threshold=1.0407206635922195, features=[]), ViolationRecord(context="Watch history:\n1. Where the Heart Is (2000)\n2. Mission: Impossible (1996)\n3. Replacements, The (2000)\n4. Blue Angel, The (Blaue Engel, Der) (1930)\n5. Man Bites Dog (C'est arrivé près de chez vous) (1992)\n6. Of Mice and Men (1992)\n7. Godfather, The (1972)\n8. Wallace & Gromit: The Best of Aardman Animation (1996)\n9. Vertigo (1958)\n10. Godfather: Part II, The (1974)", prompt="User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: doctor/health care\n\nWatch history:\n1. Where the Heart Is (2000)\n2. Mission: Impossible (1996)\n3. Replacements, The (2000)\n4. Blue Angel, The (Blaue Engel, Der) (1930)\n5. Man Bites Dog (C'est arrivé près de chez vous) (1992)\n6. Of Mice and Men (1992)\n7. Godfather, The (1972)\n8. Wallace & Gromit: The Best of Aardman Animation (1996)\n9. Vertigo (1958)\n10. Godfather: Part II, The (1974)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=doctor/health care', score=1.045004490762949, threshold=1.043718889001757, features=[]), ViolationRecord(context='Watch history:\n1. Seventh Seal, The (Sjunde inseglet, Det) (1957)\n2. North by Northwest (1959)\n3. Nights of Cabiria (Le Notti di Cabiria) (1957)\n4. Pather Panchali (1955)\n5. Paths of Glory (1957)\n6. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n7. 400 Blows, The (Les Quatre cents coups) (1959)\n8. Rebel Without a Cause (1955)\n9. East of Eden (1955)\n10. On the Waterfront (1954)', prompt='User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: artist\n\nWatch history:\n1. Seventh Seal, The (Sjunde inseglet, Det) (1957)\n2. North by Northwest (1959)\n3. Nights of Cabiria (Le Notti di Cabiria) (1957)\n4. Pather Panchali (1955)\n5. Paths of Glory (1957)\n6. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n7. 400 Blows, The (Les Quatre cents coups) (1959)\n8. Rebel Without a Cause (1955)\n9. East of Eden (1955)\n10. On the Waterfront (1954)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=artist', score=1.089497983455658, threshold=1.0437831690898165, features=[]), ViolationRecord(context="Watch history:\n1. Parent Trap, The (1961)\n2. Nutty Professor, The (1963)\n3. Absent Minded Professor, The (1961)\n4. Babes in Toyland (1961)\n5. Pollyanna (1960)\n6. Rear Window (1954)\n7. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n8. Singin' in the Rain (1952)\n9. Some Like It Hot (1959)\n10. Roman Holiday (1953)", prompt="User profile (audit only):\n- gender: M\n- age: 18-24\n- occupation: college/grad student\n\nWatch history:\n1. Parent Trap, The (1961)\n2. Nutty Professor, The (1963)\n3. Absent Minded Professor, The (1961)\n4. Babes in Toyland (1961)\n5. Pollyanna (1960)\n6. Rear Window (1954)\n7. Seven Samurai (The Magnificent Seven) (Shichinin no samurai) (1954)\n8. Singin' in the Rain (1952)\n9. Some Like It Hot (1959)\n10. Roman Holiday (1953)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=18-24|occupation=college/grad student', score=1.094248041510582, threshold=1.0460689098081086, features=[]), ViolationRecord(context="Watch history:\n1. On the Waterfront (1954)\n2. Guys and Dolls (1955)\n3. High Noon (1952)\n4. Pajama Game, The (1957)\n5. Room at the Top (1959)\n6. Face in the Crowd, A (1957)\n7. Two Women (La Ciociara) (1961)\n8. Who's Afraid of Virginia Woolf? (1966)\n9. Jules and Jim (Jules et Jim) (1961)\n10. Perfect Storm, The (2000)", prompt="User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: artist\n\nWatch history:\n1. On the Waterfront (1954)\n2. Guys and Dolls (1955)\n3. High Noon (1952)\n4. Pajama Game, The (1957)\n5. Room at the Top (1959)\n6. Face in the Crowd, A (1957)\n7. Two Women (La Ciociara) (1961)\n8. Who's Afraid of Virginia Woolf? (1966)\n9. Jules and Jim (Jules et Jim) (1961)\n10. Perfect Storm, The (2000)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n", recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=artist', score=1.0515957698225975, threshold=1.0484778663932324, features=[]), ViolationRecord(context='Watch history:\n1. Star Wars: Episode IV - A New Hope (1977)\n2. Terminator, The (1984)\n3. Terminator 2: Judgment Day (1991)\n4. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n5. Close Encounters of the Third Kind (1977)\n6. Back to the Future (1985)\n7. Matrix, The (1999)\n8. Twelve Monkeys (1995)\n9. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n10. Planet of the Apes (1968)', prompt='User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Star Wars: Episode IV - A New Hope (1977)\n2. Terminator, The (1984)\n3. Terminator 2: Judgment Day (1991)\n4. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n5. Close Encounters of the Third Kind (1977)\n6. Back to the Future (1985)\n7. Matrix, The (1999)\n8. Twelve Monkeys (1995)\n9. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n10. Planet of the Apes (1968)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=executive/managerial', score=1.9988499213010074, threshold=1.0486337615647006, features=[]), ViolationRecord(context='Watch history:\n1. Brazil (1985)\n2. Village of the Damned (1960)\n3. Predator (1987)\n4. Day the Earth Stood Still, The (1951)\n5. Starman (1984)\n6. Forbidden Planet (1956)\n7. Mad Max (1979)\n8. Fly, The (1986)\n9. Star Trek IV: The Voyage Home (1986)\n10. Abyss, The (1989)', prompt='User profile (audit only):\n- gender: F\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Brazil (1985)\n2. Village of the Damned (1960)\n3. Predator (1987)\n4. Day the Earth Stood Still, The (1951)\n5. Starman (1984)\n6. Forbidden Planet (1956)\n7. Mad Max (1979)\n8. Fly, The (1986)\n9. Star Trek IV: The Voyage Home (1986)\n10. Abyss, The (1989)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=F|age=25-34|occupation=executive/managerial', score=2.060223637521267, threshold=1.096144569551516, features=[]), ViolationRecord(context='Watch history:\n1. Godfather: Part II, The (1974)\n2. Star Wars: Episode IV - A New Hope (1977)\n3. Jaws (1975)\n4. Alien (1979)\n5. Man with the Golden Gun, The (1974)\n6. Live and Let Die (1973)\n7. Spy Who Loved Me, The (1977)\n8. Superman (1978)\n9. Mad Max (1979)\n10. Westworld (1973)', prompt='User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: sales/marketing\n\nWatch history:\n1. Godfather: Part II, The (1974)\n2. Star Wars: Episode IV - A New Hope (1977)\n3. Jaws (1975)\n4. Alien (1979)\n5. Man with the Golden Gun, The (1974)\n6. Live and Let Die (1973)\n7. Spy Who Loved Me, The (1977)\n8. Superman (1978)\n9. Mad Max (1979)\n10. Westworld (1973)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=sales/marketing', score=1.9052045106887818, threshold=1.1443485229500037, features=[]), ViolationRecord(context='Watch history:\n1. Terminator 2: Judgment Day (1991)\n2. Jurassic Park (1993)\n3. Star Trek VI: The Undiscovered Country (1991)\n4. Fifth Element, The (1997)\n5. Contact (1997)\n6. Matrix, The (1999)\n7. Total Recall (1990)\n8. Star Trek: First Contact (1996)\n9. Face/Off (1997)\n10. Men in Black (1997)', prompt='User profile (audit only):\n- gender: M\n- age: 45-49\n- occupation: technician/engineer\n\nWatch history:\n1. Terminator 2: Judgment Day (1991)\n2. Jurassic Park (1993)\n3. Star Trek VI: The Undiscovered Country (1991)\n4. Fifth Element, The (1997)\n5. Contact (1997)\n6. Matrix, The (1999)\n7. Total Recall (1990)\n8. Star Trek: First Contact (1996)\n9. Face/Off (1997)\n10. Men in Black (1997)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=45-49|occupation=technician/engineer', score=1.8524950802326203, threshold=1.1823913223369427, features=[]), ViolationRecord(context='Watch history:\n1. Star Wars: Episode IV - A New Hope (1977)\n2. Terminator, The (1984)\n3. Terminator 2: Judgment Day (1991)\n4. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n5. Close Encounters of the Third Kind (1977)\n6. Back to the Future (1985)\n7. Matrix, The (1999)\n8. Twelve Monkeys (1995)\n9. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n10. Planet of the Apes (1968)', prompt='User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Star Wars: Episode IV - A New Hope (1977)\n2. Terminator, The (1984)\n3. Terminator 2: Judgment Day (1991)\n4. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n5. Close Encounters of the Third Kind (1977)\n6. Back to the Future (1985)\n7. Matrix, The (1999)\n8. Twelve Monkeys (1995)\n9. Mad Max 2 (a.k.a. The Road Warrior) (1981)\n10. Planet of the Apes (1968)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=25-34|occupation=executive/managerial', score=1.9988499213010074, threshold=1.2158965102317267, features=[]), ViolationRecord(context='Watch history:\n1. Brazil (1985)\n2. Village of the Damned (1960)\n3. Predator (1987)\n4. Day the Earth Stood Still, The (1951)\n5. Starman (1984)\n6. Forbidden Planet (1956)\n7. Mad Max (1979)\n8. Fly, The (1986)\n9. Star Trek IV: The Voyage Home (1986)\n10. Abyss, The (1989)', prompt='User profile (audit only):\n- gender: F\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Brazil (1985)\n2. Village of the Damned (1960)\n3. Predator (1987)\n4. Day the Earth Stood Still, The (1951)\n5. Starman (1984)\n6. Forbidden Planet (1956)\n7. Mad Max (1979)\n8. Fly, The (1986)\n9. Star Trek IV: The Voyage Home (1986)\n10. Abyss, The (1989)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=F|age=25-34|occupation=executive/managerial', score=2.060223637521267, threshold=1.2550441807851906, features=[]), ViolationRecord(context='Watch history:\n1. Godfather: Part II, The (1974)\n2. Star Wars: Episode IV - A New Hope (1977)\n3. Jaws (1975)\n4. Alien (1979)\n5. Man with the Golden Gun, The (1974)\n6. Live and Let Die (1973)\n7. Spy Who Loved Me, The (1977)\n8. Superman (1978)\n9. Mad Max (1979)\n10. Westworld (1973)', prompt='User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: sales/marketing\n\nWatch history:\n1. Godfather: Part II, The (1974)\n2. Star Wars: Episode IV - A New Hope (1977)\n3. Jaws (1975)\n4. Alien (1979)\n5. Man with the Golden Gun, The (1974)\n6. Live and Let Die (1973)\n7. Spy Who Loved Me, The (1977)\n8. Superman (1978)\n9. Mad Max (1979)\n10. Westworld (1973)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=35-44|occupation=sales/marketing', score=1.9052045106887818, threshold=1.2953031536219946, features=[]), ViolationRecord(context='Watch history:\n1. Terminator 2: Judgment Day (1991)\n2. Jurassic Park (1993)\n3. Star Trek VI: The Undiscovered Country (1991)\n4. Fifth Element, The (1997)\n5. Contact (1997)\n6. Matrix, The (1999)\n7. Total Recall (1990)\n8. Star Trek: First Contact (1996)\n9. Face/Off (1997)\n10. Men in Black (1997)', prompt='User profile (audit only):\n- gender: M\n- age: 45-49\n- occupation: technician/engineer\n\nWatch history:\n1. Terminator 2: Judgment Day (1991)\n2. Jurassic Park (1993)\n3. Star Trek VI: The Undiscovered Country (1991)\n4. Fifth Element, The (1997)\n5. Contact (1997)\n6. Matrix, The (1999)\n7. Total Recall (1990)\n8. Star Trek: First Contact (1996)\n9. Face/Off (1997)\n10. Men in Black (1997)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n', recs=['', '', '', '', '', '', '', '', '', ''], group='gender=M|age=45-49|occupation=technician/engineer', score=1.8524950802326203, threshold=1.325798221475334, features=[])]
+2026-01-21 13:37:28,435 - INFO - eval_df[:5]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                prompt  \
+2420                                                       User profile (audit only):\n- gender: M\n- age: 18-24\n- occupation: self-employed\n\nWatch history:\n1. Rush Hour (1998)\n2. In the Line of Fire (1993)\n3. Face/Off (1997)\n4. Rumble in the Bronx (1995)\n5. Speed (1994)\n6. Army of Darkness (1993)\n7. Ronin (1998)\n8. Rock, The (1996)\n9. Men in Black (1997)\n10. Thomas Crown Affair, The (1999)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+524                                          User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: other\n\nWatch history:\n1. Devil's Advocate, The (1997)\n2. Simple Plan, A (1998)\n3. Defending Your Life (1991)\n4. Wild Things (1998)\n5. Analyze This (1999)\n6. Rosewood (1997)\n7. So I Married an Axe Murderer (1993)\n8. Con Air (1997)\n9. Mummy, The (1999)\n10. Permanent Midnight (1998)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+362                                                            User profile (audit only):\n- gender: M\n- age: 25-34\n- occupation: executive/managerial\n\nWatch history:\n1. Dog Day Afternoon (1975)\n2. Seven (Se7en) (1995)\n3. Sting, The (1973)\n4. Simple Plan, A (1998)\n5. Lethal Weapon (1987)\n6. Robocop (1987)\n7. Alien Nation (1988)\n8. Lethal Weapon 2 (1989)\n9. Sleepers (1996)\n10. Wisdom (1986)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1471       User profile (audit only):\n- gender: M\n- age: 56+\n- occupation: executive/managerial\n\nWatch history:\n1. Melvin and Howard (1980)\n2. Papillon (1973)\n3. Longest Day, The (1962)\n4. Truman Show, The (1998)\n5. Field of Dreams (1989)\n6. Mr. Holland's Opus (1995)\n7. Agnes of God (1985)\n8. As Good As It Gets (1997)\n9. Color Purple, The (1985)\n10. What Ever Happened to Baby Jane? (1962)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+1107  User profile (audit only):\n- gender: M\n- age: 35-44\n- occupation: executive/managerial\n\nWatch history:\n1. Terminator, The (1984)\n2. Good Will Hunting (1997)\n3. Jaws (1975)\n4. Man Who Would Be King, The (1975)\n5. Christmas Story, A (1983)\n6. Butch Cassidy and the Sundance Kid (1969)\n7. Producers, The (1968)\n8. Mary Poppins (1964)\n9. Wayne's World (1992)\n10. Princess Bride, The (1987)\n\nTask:\nRecommend the next 10 items the user would like, as a ranked list.\nReturn ONLY a JSON array of item titles (strings), length = 10.\n   
+
+                                                                                                                                                                                                                                                                                                                  context  \
+2420                                                Watch history:\n1. Rush Hour (1998)\n2. In the Line of Fire (1993)\n3. Face/Off (1997)\n4. Rumble in the Bronx (1995)\n5. Speed (1994)\n6. Army of Darkness (1993)\n7. Ronin (1998)\n8. Rock, The (1996)\n9. Men in Black (1997)\n10. Thomas Crown Affair, The (1999)   
+524                           Watch history:\n1. Devil's Advocate, The (1997)\n2. Simple Plan, A (1998)\n3. Defending Your Life (1991)\n4. Wild Things (1998)\n5. Analyze This (1999)\n6. Rosewood (1997)\n7. So I Married an Axe Murderer (1993)\n8. Con Air (1997)\n9. Mummy, The (1999)\n10. Permanent Midnight (1998)   
+362                                                            Watch history:\n1. Dog Day Afternoon (1975)\n2. Seven (Se7en) (1995)\n3. Sting, The (1973)\n4. Simple Plan, A (1998)\n5. Lethal Weapon (1987)\n6. Robocop (1987)\n7. Alien Nation (1988)\n8. Lethal Weapon 2 (1989)\n9. Sleepers (1996)\n10. Wisdom (1986)   
+1471     Watch history:\n1. Melvin and Howard (1980)\n2. Papillon (1973)\n3. Longest Day, The (1962)\n4. Truman Show, The (1998)\n5. Field of Dreams (1989)\n6. Mr. Holland's Opus (1995)\n7. Agnes of God (1985)\n8. As Good As It Gets (1997)\n9. Color Purple, The (1985)\n10. What Ever Happened to Baby Jane? (1962)   
+1107  Watch history:\n1. Terminator, The (1984)\n2. Good Will Hunting (1997)\n3. Jaws (1975)\n4. Man Who Would Be King, The (1975)\n5. Christmas Story, A (1983)\n6. Butch Cassidy and the Sundance Kid (1969)\n7. Producers, The (1968)\n8. Mary Poppins (1964)\n9. Wayne's World (1992)\n10. Princess Bride, The (1987)   
+
+     gender    age            occupation target_mid                        target_title           mapped_recs  valid_at_k  is_violation         S         Q  
+2420      M  18-24         self-employed       2916                 Total Recall (1990)  [, , , , , , , , , ]         0.0         False  0.891677  1.215897  
+524       M  25-34                 other       2432                      Stepmom (1998)  [, , , , , , , , , ]         0.0         False  0.897099  1.215897  
+362       M  25-34  executive/managerial        434                  Cliffhanger (1993)  [, , , , , , , , , ]         0.0         False  0.933186  1.215897  
+1471      M    56+  executive/managerial       1227  Once Upon a Time in America (1984)  [, , , , , , , , , ]         0.0         False  0.926050  1.215897  
+1107      M  35-44  executive/managerial       1265                Groundhog Day (1993)  [, , , , , , , , , ]         0.0         False  0.897987  1.215897  
+2026-01-21 13:37:29,227 - INFO - Iter 2: {
+  "iteration": 2,
+  "violation_rate": 0.005398110661268556,
+  "violation_count": 4,
+  "HitRate@10": 0.0,
+  "NDCG@10": 0.0,
+  "Valid@10": 0.0,
+  "SNSR": 1.0,
+  "SNSV": 1.0,
+  "Q_last": 1.3521330644131986
+}
+2026-01-21 13:37:29,227 - INFO - 
+=== FINAL RESULTS ===
+{
+  "ml-1m": {
+    "baseline": {
+      "ZeroShot_OpenEnded": {
+        "HitRate@10": 0.001349527665317139,
+        "NDCG@10": 0.00040624830723884103,
+        "Valid@10": 0.19999999999999998,
+        "SNSR": 0.04514908790588379,
+        "SNSV": 0.04514908790588379,
+        "CFR": 0.05366575390100479,
+        "CFR_valid_rate": 1.0,
+        "CFR_n_pairs": 200,
+        "violation_count": 31,
+        "violation_rate": 0.04183535762483131
+      }
+    },
+    "history": [
+      {
+        "iteration": 1,
+        "violation_rate": 0.01349527665317139,
+        "violation_count": 10,
+        "HitRate@10": 0.0,
+        "NDCG@10": 0.0,
+        "Valid@10": 0.0,
+        "SNSR": 1.0,
+        "SNSV": 1.0,
+        "Q_last": 1.2158965102317267,
+        "CFR": 0.05366575390100479,
+        "CFR_valid_rate": 1.0,
+        "CFR_n_pairs": 200
+      },
+      {
+        "iteration": 2,
+        "violation_rate": 0.005398110661268556,
+        "violation_count": 4,
+        "HitRate@10": 0.0,
+        "NDCG@10": 0.0,
+        "Valid@10": 0.0,
+        "SNSR": 1.0,
+        "SNSV": 1.0,
+        "Q_last": 1.3521330644131986
+      }
+    ],
+    "Q_alpha_init": 1.3521330644131986,
+    "preprocessing_time": 0.3637197454770406,
+    "calib_time": 33.2373095591863,
+    "total_inference_time": 129.96093854109446
+  }
+}
