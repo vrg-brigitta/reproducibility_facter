@@ -20,6 +20,17 @@ Install all required dependencies:
 pip install -r Requirements.txt
 ```
 
+## Acccess to LLMs
+
+The repository is using [Transformers](https://pypi.org/project/transformers/) and there are many model checkpoints on the Hugging Face Hub that can be accessed with it. By default [Mistral - 7B - Instruct - v0.1](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1) is configured, this can be accessed without permission on Hugging Face Hub, but a login is still needed:
+
+- `pip install -U "huggingface_hub"`
+- `hf auth login`
+
+For the following 2 models permission needs to be requested in order to be used:
+- [Llama 2](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
+- [Llama 3](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+
 ## Mini Test (Debug Mode)
 
 This is recommended to run a mini test using the default configuration to verify that the setup works before running full experiments:
