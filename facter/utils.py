@@ -86,7 +86,7 @@ def parse_ranked_list(text: str, k: int) -> List[str]:
             seen.add(x)
     return uniq[:k]
 
-def parse_ranked_list_improved(text: str, k: int) -> List[str]:
+def parse_ranked_list_mistral(text: str, k: int) -> List[str]:
     """
     Parse a model output into a list of titles.
     Prefers JSON array; otherwise parse numbered/bulleted lines.
@@ -169,8 +169,8 @@ def generate_recommendations(
             outputs = model.generate(
                 input_ids=input_ids,
                 attention_mask = (input_ids != tokenizer.pad_token_id).long(),
-                # max_new_tokens=Config.MAX_NEW_TOKENS,
-                max_new_tokens=Config.MAX_NEW_TOKENS * 3 if Config.IMPROVED else Config.MAX_NEW_TOKENS,  # improved version (prevents truncation for LLaMA-2 and Mistral)
+                # give more room, use 3x as much to prevent truncation for responses that repeat the question (e.g. LLaMA-2 and Mistral)
+                max_new_tokens=Config.MAX_NEW_TOKENS * 3,  
                 temperature=Config.TEMPERATURE,
                 top_p=Config.TOP_P,
                 repetition_penalty=Config.REPETITION_PENALTY,
@@ -180,8 +180,8 @@ def generate_recommendations(
 
         decoded = tokenizer.batch_decode(outputs, skip_special_tokens=True)
         for txt in decoded:
-            if Config.IMPROVED:
-                recs = parse_ranked_list_improved(txt, Config.TOP_K_RECS)
+            if Config.LLM_BACKBONE.startswith("mistralai/"):
+                recs = parse_ranked_list_mistral(txt, Config.TOP_K_RECS)
             else:
                 recs = parse_ranked_list(txt, Config.TOP_K_RECS)  # original version (do not work fro Llama2 and Mistral)
             all_recs.append(recs)

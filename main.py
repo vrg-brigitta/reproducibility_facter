@@ -75,7 +75,6 @@ def parse_args():
     parser.add_argument("--n_bootstrap", type=int, default=None)
 
     parser.add_argument("--random_seed", type=int, default=None)
-    parser.add_argument("--improved", action=argparse.BooleanOptionalAction, default=None)
     parser.add_argument("--train_size", type=int, default=None)
     parser.add_argument("--max_iterations", type=int, default=None)
 
@@ -197,7 +196,7 @@ def main():
         # -------------------------
         logger.info("Calibration generation (open-ended Top-K)...")
         calib_start = time.time()
-        if Config.IMPROVED:
+        if Config.LLM_BACKBONE.startswith("mistralai/"):
             cal_recs_raw = generate_recommendations(train_df["prompt"].tolist(), 
                                                     system_msg="", 
                                                     tokenizer=tokenizer, 

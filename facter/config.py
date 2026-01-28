@@ -88,7 +88,6 @@ class Config:
     # Reproducibility
     RANDOM_SEED: int = 42
 
-    IMPROVED: bool = False
     TRAIN_SIZE: int = None
     DATASETS_USED = ['ml-1m']
     MAX_ITERATIONS: int = 5
