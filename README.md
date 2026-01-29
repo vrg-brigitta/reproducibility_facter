@@ -87,15 +87,18 @@ python main.py --help
 
 ## Reproducibility steps
 
-On MovieLens dataset:
-- `python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used ml-1m`
-- `python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used ml-1m`
+### LLaMA-3
 - `python main.py --llm_backbone meta-llama/Meta-Llama-3-8B-Instruct --datasets_used ml-1m`
-
-On Amazon dataset:
-- `python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used amazon`
-- `python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used amazon`
 - `python main.py --llm_backbone meta-llama/Meta-Llama-3-8B-Instruct --datasets_used amazon`
+
+### LLaMA-2
+*Note: results yield Valid@10 = 0.*
+- `python main.py --llm_backbone meta-llama/Llama-2-7b-chat-hf --datasets_used ml-1m`
+
+### Mistral
+*Note: the improved implementation is required, as the base implementation results in Valid@10 = 0.*
+- `python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used ml-1m --improved`
+- `python main.py --llm_backbone mistralai/Mistral-7B-Instruct-v0.1 --datasets_used amazon --improved`
 
 ## Carbon Emissions Tracking
 
